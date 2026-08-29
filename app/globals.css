@@ -303,3 +303,7 @@ code, kbd, .font-mono {
   opacity: 0;
   animation: hero-fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
 }
+.hero-animate-delay-6 {
+  opacity: 0;
+  animation: hero-fade-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+}
