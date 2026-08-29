@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Gift, Building2, HelpCircle, PhoneCall } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 interface NavbarProps {
   scrolled: boolean;
@@ -10,13 +10,13 @@ interface NavbarProps {
 }
 
 const mainNavItems = [
-  { href: "/#about", label: "About", id: "about" },
-  { href: "/#plans", label: "Plans & Pricing", id: "plans" },
-  { href: "/#process", label: "Process", id: "process" },
-  { href: "/partner-company", label: "Hire Talent", id: "partner-company", isRoute: true },
-  { href: "/refer-and-earn", label: "Refer & Earn", id: "refer-and-earn", badge: "Reward", isRoute: true },
-  { href: "/faq", label: "FAQ", id: "faq", isRoute: true },
-  { href: "/contact", label: "Contact", id: "contact", isRoute: true },
+  { href: "/about", label: "About", id: "about" },
+  { href: "/plans", label: "Plans & Pricing", id: "plans" },
+  { href: "/process", label: "Process", id: "process" },
+  { href: "/partner-company", label: "Hire Talent", id: "partner-company" },
+  { href: "/refer-and-earn", label: "Refer & Earn", id: "refer-and-earn", badge: "Reward" },
+  { href: "/faq", label: "FAQ", id: "faq" },
+  { href: "/contact", label: "Contact", id: "contact" },
 ];
 
 export default function Navbar({ scrolled, activeSection }: NavbarProps) {
@@ -59,7 +59,7 @@ export default function Navbar({ scrolled, activeSection }: NavbarProps) {
             ))}
           </ul>
           <Link
-            href="/#plans"
+            href="/plans"
             className="btn btn-sm bg-[#a020f0] hover:bg-[#8019c0] text-white border-none font-semibold px-5 rounded-full transition-all hover:scale-105 btn-shimmer ml-1"
           >
             Get Started
@@ -100,7 +100,7 @@ export default function Navbar({ scrolled, activeSection }: NavbarProps) {
             </Link>
           ))}
           <Link
-            href="/#plans"
+            href="/plans"
             onClick={() => setMobileMenuOpen(false)}
             className="btn bg-[#a020f0] hover:bg-[#8019c0] text-white border-none font-semibold w-full mt-3 rounded-full btn-shimmer"
           >

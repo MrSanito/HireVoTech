@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Mail, Phone, MapPin, Globe } from "lucide-react";
 
 export default function Footer() {
@@ -9,9 +10,11 @@ export default function Footer() {
       <div className="max-w-6xl w-full flex flex-col lg:flex-row justify-between items-center gap-12">
         {/* Logo */}
         <div className="text-center lg:text-left flex flex-col items-center lg:items-start gap-2 group cursor-default">
-          <span className="text-3xl font-extrabold tracking-wider bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_20px_rgba(160,32,240,0.3)] transition-all duration-500">
-            Hire<span className="text-[#a020f0]">Vo</span>Tech
-          </span>
+          <Link href="/" className="inline-block">
+            <span className="text-3xl font-extrabold tracking-wider bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent group-hover:drop-shadow-[0_0_20px_rgba(160,32,240,0.3)] transition-all duration-500">
+              Hire<span className="text-[#a020f0]">Vo</span>Tech
+            </span>
+          </Link>
           <p className="text-sm text-neutral-500 font-light mt-1">Your Success Starts Here.</p>
         </div>
 
@@ -44,33 +47,33 @@ export default function Footer() {
 
         {/* Nav Links */}
         <div className="flex flex-wrap justify-center lg:justify-end gap-x-6 gap-y-2 text-xs font-medium">
-          <a href="#about" className="hover:text-white transition-colors">
+          <Link href="/about" className="hover:text-white transition-colors">
             About
-          </a>
-          <a href="#approach" className="hover:text-white transition-colors">
-            Approach
-          </a>
-          <a href="#why-us" className="hover:text-white transition-colors">
-            Why Choose Us
-          </a>
-          <a href="#plans" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/plans" className="hover:text-white transition-colors">
             Plans
-          </a>
-          <a href="./partner-company" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/process" className="hover:text-white transition-colors">
+            Process
+          </Link>
+          <Link href="/partner-company" className="hover:text-white transition-colors">
             Partner Company
-          </a>
-          <a href="./faq" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/refer-and-earn" className="hover:text-white transition-colors">
+            Refer & Earn
+          </Link>
+          <Link href="/faq" className="hover:text-white transition-colors">
             FAQ&apos;s
-          </a>
-          <a href="./privacy-policy" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/privacy-policy" className="hover:text-white transition-colors">
             Privacy Policy
-          </a>
-          <a href="./terms-and-conditions" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
             Terms and Conditions
-          </a>
-          <a href="./contact" className="hover:text-white transition-colors">
+          </Link>
+          <Link href="/contact" className="hover:text-white transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
 
