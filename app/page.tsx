@@ -3,16 +3,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Approach from "./components/Approach";
-import WhyChooseUs from "./components/WhyChooseUs";
-import PlansPricing from "./components/PlansPricing";
-import Process from "./components/Process";
-import Mission from "./components/Mission";
 import TrustedClients from "./components/TrustedClients";
+import Approach from "./components/Approach";
+import Process from "./components/Process";
 import Stats from "./components/Stats";
 import Testimonials from "./components/Testimonials";
-import ReferralBanner from "./components/ReferralBanner";
 import Footer from "./components/Footer";
 
 /* ─── Custom Hook: Scroll Reveal ─── */
@@ -76,39 +71,22 @@ function useAnimatedCounter(target: number, duration: number = 2000, suffix: str
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
 
-  // Scroll-aware navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      const sections = ["about", "approach", "why-us", "plans", "process"];
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id);
-        if (el && el.getBoundingClientRect().top <= 150) {
-          setActiveSection(id);
-          break;
-        }
-      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Scroll reveal refs
-  const aboutRef = useScrollReveal();
   const approachRef = useScrollReveal();
   const approachCardsRef = useScrollReveal();
-  const whyUsRef = useScrollReveal();
-  const reasonsRef = useScrollReveal();
-  const plansRef = useScrollReveal();
-  const investRef = useScrollReveal();
   const processRef = useScrollReveal();
-  const missionRef = useScrollReveal();
   const logosRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const testimonialsRef = useScrollReveal();
-  const referRef = useScrollReveal();
 
   // Animated stat counters
   const stat1 = useAnimatedCounter(80, 2000, "%");
@@ -129,43 +107,28 @@ export default function Home() {
       <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#c68efd]/5 blur-[180px] pointer-events-none orb-float-2"></div>
       <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#8482ff]/5 blur-[160px] pointer-events-none orb-float-3"></div>
 
-      {/* ═══ Navbar ═══ */}
-      <Navbar scrolled={scrolled} activeSection={activeSection} />
+      {/* ═══ 1. Navbar ═══ */}
+      <Navbar scrolled={scrolled} />
 
-      {/* ═══ Hero Section ═══ */}
+      {/* ═══ 2. Hero Section (Cleaned & Focused) ═══ */}
       <Hero />
 
-      {/* ═══ Section: About HireVoTech ═══ */}
-      <About revealRef={aboutRef} />
-
-      {/* ═══ Section: Our Approach ═══ */}
-      <Approach headingRef={approachRef} cardsRef={approachCardsRef} />
-
-      {/* ═══ Section: Why Choose Us ═══ */}
-      <WhyChooseUs headingRef={whyUsRef} reasonsRef={reasonsRef} />
-
-      {/* ═══ Section: Subscription & Investment Plans ═══ */}
-      <PlansPricing plansRef={plansRef} investRef={investRef} />
-
-      {/* ═══ Section: Our Process ═══ */}
-      <Process processRef={processRef} />
-
-      {/* ═══ Section: Mission Statement ═══ */}
-      <Mission missionRef={missionRef} />
-
-      {/* ═══ Section: Trusted Clients Logo Slider ═══ */}
+      {/* ═══ 3. Trusted Clients Logo Slider (Immediate Social Proof) ═══ */}
       <TrustedClients logosRef={logosRef} />
 
-      {/* ═══ Section: Placement Performance Stats ═══ */}
+      {/* ═══ 4. Our Approach (4 Core Pillars) ═══ */}
+      <Approach headingRef={approachRef} cardsRef={approachCardsRef} />
+
+      {/* ═══ 5. Our 7-Step Process (Roadmap) ═══ */}
+      <Process processRef={processRef} />
+
+      {/* ═══ 6. Placement Performance Stats ═══ */}
       <Stats statsRef={statsRef} stats={animatedStats} />
 
-      {/* ═══ Section: Testimonials Success Stories ═══ */}
+      {/* ═══ 7. Testimonials & Client Success Stories ═══ */}
       <Testimonials testimonialsRef={testimonialsRef} />
 
-      {/* ═══ Section: Refer & Earn Banner ═══ */}
-      <ReferralBanner referRef={referRef} />
-
-      {/* ═══ Footer ═══ */}
+      {/* ═══ 8. Footer ═══ */}
       <Footer />
     </div>
   );
