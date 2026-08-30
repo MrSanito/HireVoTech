@@ -13,7 +13,7 @@ export default function ReferAndEarn() {
     referralType: "candidate",
     refName: "",
     refEmail: "",
-    refPhone: "",
+    refPhone: "", 
     notes: "",
   });
   const [submitted, setSubmitted] = useState(false);
