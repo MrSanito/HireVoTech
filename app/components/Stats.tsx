@@ -15,13 +15,13 @@ interface StatsProps {
 
 export default function Stats({ statsRef, stats }: StatsProps) {
   return (
-    <section className="py-24 border-t border-white/5 bg-[#08000d]/40 relative z-10 px-4 md:px-8">
+    <section className="pt-10 pb-24 border-t border-white/5 bg-[#08000d]/40 relative z-10 px-4 md:px-8">
       <div className="max-w-5xl mx-auto text-center">
         <div ref={statsRef} className="reveal">
           <div className="inline-flex items-center gap-2 bg-purple-500/10 text-[#c68efd] border border-purple-500/20 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider w-fit mb-4">
             Growth & Success
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-10">
             Placement Performance Overview
           </h2>
         </div>

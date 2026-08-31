@@ -28,7 +28,7 @@ export default function Process({
   steps = defaultSteps,
 }: ProcessProps) {
   return (
-    <section id="process" className="py-24 border-t border-white/5 bg-[#08000d]/60 relative z-10 px-4 md:px-8">
+    <section id="process" className="pt-24 pb-10 border-t border-white/5 bg-[#08000d]/60 relative z-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div ref={processRef} className="text-center mb-16 reveal">
           <span className="text-xs uppercase tracking-widest text-[#c19a4f] font-semibold mb-3 block">
