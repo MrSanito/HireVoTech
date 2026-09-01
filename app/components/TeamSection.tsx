@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Emily Carter",
     role: "Senior Tech Recruiter",
     dept: "Software & Cloud Engineering",
-    image: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:600/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Team-1.webp",
+    image: "/images/team-1.jpg",
     bio: "Specializing in full-stack, DevOps, and cloud systems placements across Silicon Valley and European tech hubs.",
     linkedin: "#",
     twitter: "#",
@@ -20,7 +20,7 @@ const teamMembers = [
     name: "Jason Lee",
     role: "Head of Executive Search",
     dept: "Leadership & VP Recruitment",
-    image: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:600/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Team-2.webp",
+    image: "/images/team-2.jpg",
     bio: "Ex-Google talent architect with 10+ years placing CTOs, Principal Architects, and Engineering Directors.",
     linkedin: "#",
     twitter: "#",
@@ -30,7 +30,7 @@ const teamMembers = [
     name: "Amira Patel",
     role: "Lead Career Strategist",
     dept: "Candidate Coaching & AI Talent",
-    image: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:600/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Team-3.webp",
+    image: "/images/team-3.jpg",
     bio: "Certified interview coach who has guided 400+ candidates through FAANG and high-growth startup hiring loops.",
     linkedin: "#",
     twitter: "#",
@@ -103,21 +103,21 @@ export default function TeamSection() {
                 <div className="flex items-center gap-2">
                   <a
                     href={member.linkedin}
-                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon size={14} />
                   </a>
                   <a
                     href={member.twitter}
-                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="Twitter"
                   >
                     <TwitterIcon size={14} />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
-                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="Email"
                   >
                     <Mail size={14} />
@@ -126,7 +126,7 @@ export default function TeamSection() {
 
                 <Link
                   href="/about"
-                  className="text-xs font-bold text-[#4846D4] hover:text-[#3735B8] flex items-center gap-1 hover:underline"
+                  className="text-xs font-bold text-[#4846D4] hover:text-[#3735B8] flex items-center gap-1 hover:underline cursor-pointer"
                 >
                   View Profile <ArrowUpRight size={14} />
                 </Link>
@@ -139,7 +139,7 @@ export default function TeamSection() {
         <div className="text-center mt-12">
           <Link
             href="/about"
-            className="capsule-btn-secondary !py-3 !px-8 !text-sm"
+            className="capsule-btn-secondary !py-3 !px-8 !text-sm cursor-pointer"
           >
             View Full Leadership Team <ArrowUpRight size={16} />
           </Link>

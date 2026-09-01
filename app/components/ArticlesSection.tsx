@@ -21,7 +21,7 @@ const articles: ArticleItem[] = [
     category: "Recruitment Trends",
     date: "June 17, 2026",
     readTime: "5 min read",
-    image: "https://mlnhaefbaoxh.i.optimole.com/w:1920/h:1280/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/img-10.webp",
+    image: "/images/article-1.jpg",
     summary: "Employers are shifting focus from pure technical qualifications to communication, adaptability, and cross-functional leadership in the AI-accelerated engineering era.",
     fullText: "In today's fast-moving software ecosystem, code proficiency alone is no longer the sole differentiator. Modern engineering orgs prioritize developers who can articulate complex architectural trade-offs, collaborate asynchronously across global time zones, and adapt rapidly to new frameworks. At HireVoTech, we coach our candidates to highlight these high-leverage traits throughout the entire interview cycle."
   },
@@ -31,7 +31,7 @@ const articles: ArticleItem[] = [
     category: "Hiring Strategy",
     date: "June 17, 2026",
     readTime: "4 min read",
-    image: "https://mlnhaefbaoxh.i.optimole.com/w:1920/h:1280/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/img-11.webp",
+    image: "/images/article-2.jpg",
     summary: "With fewer applicants on traditional job boards, businesses are leveraging proactive candidate marketing, specialized headhunters, and streamlined interview loops.",
     fullText: "The traditional approach of 'post and pray' on public job portals is failing enterprise hiring managers. Leading tech enterprises are adopting outbound talent sourcing, customized candidate engagement, and transparent compensation banding to secure top 1% engineers before competitors do. Learn how HireVoTech builds custom candidate pipelines tailored to your stack."
   }

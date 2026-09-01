@@ -1,19 +1,18 @@
 "use client";
 
 import React from "react";
-import { Building2 } from "lucide-react";
+import { Building2, Cpu, Cloud, Database, Network, Shield, Zap, Globe, Server, Code } from "lucide-react";
 
-export const defaultClientLogos: { name: string; url: string }[] = [
-  { name: "ProJob Tech", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-1.png" },
-  { name: "Venture Corp", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-2.png" },
-  { name: "Apex Labs", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-3.png" },
-  { name: "CloudScale", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-4.png" },
-  { name: "Global Networks", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-5.png" },
-  { name: "Alpha Tech", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-6.png" },
-  { name: "ScaleForce", url: "https://framerusercontent.com/images/vRlMVcd1MmicJ9t5LsWOhee9iwo.png" },
-  { name: "DevCore", url: "https://framerusercontent.com/images/1wvDdiubX6xWYsZB43JXAs6Vje4.png" },
-  { name: "NextGen", url: "https://framerusercontent.com/images/i4SR0kJCha6bGQOCnT5DghPE.png" },
-  { name: "CyberMatrix", url: "https://framerusercontent.com/images/T6XRoD8cNpQqdJCq4NGf82RGJVQ.png" }
+export const clientCompanies = [
+  { name: "ProJob Tech", icon: Cpu, desc: "AI Infrastructure" },
+  { name: "CloudScale Systems", icon: Cloud, desc: "Cloud & DevOps" },
+  { name: "Apex Labs", icon: Zap, desc: "FinTech Platform" },
+  { name: "DevCore Global", icon: Code, desc: "Enterprise SaaS" },
+  { name: "DataMatrix Corp", icon: Database, desc: "Big Data & ML" },
+  { name: "CyberVenture", icon: Shield, desc: "Cybersecurity" },
+  { name: "Global Networks", icon: Globe, desc: "Telecom & IoT" },
+  { name: "ServerStack", icon: Server, desc: "High Perf Computing" },
+  { name: "Alpha Edge", icon: Network, desc: "Edge Computing" },
 ];
 
 interface TrustedClientsProps {
@@ -38,33 +37,51 @@ export default function TrustedClients({ logosRef }: TrustedClientsProps) {
         <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-[#F2F3FC] to-transparent z-10 pointer-events-none"></div>
         <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-[#F2F3FC] to-transparent z-10 pointer-events-none"></div>
 
-        <div className="flex gap-8 animate-marquee whitespace-nowrap min-w-full items-center">
-          {defaultClientLogos.map((logo, idx) => (
-            <div
-              key={`logo-1-${idx}`}
-              className="flex-shrink-0 w-44 h-20 flex items-center justify-center bg-white rounded-2xl p-4 border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all"
-            >
-              <img
-                src={logo.url}
-                alt={logo.name}
-                className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          ))}
+        <div className="flex gap-6 animate-marquee whitespace-nowrap min-w-full items-center">
+          {clientCompanies.map((client, idx) => {
+            const IconComponent = client.icon;
+            return (
+              <div
+                key={`logo-1-${idx}`}
+                className="flex-shrink-0 px-5 py-3.5 flex items-center gap-3 bg-white rounded-2xl border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all group cursor-default"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[#F0F0FF] text-[#4846D4] flex items-center justify-center group-hover:bg-[#4846D4] group-hover:text-white transition-colors flex-shrink-0">
+                  <IconComponent size={18} />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-extrabold text-[#0D0C41] group-hover:text-[#4846D4] transition-colors font-sans">
+                    {client.name}
+                  </div>
+                  <div className="text-[10px] text-[#555566] font-medium">
+                    {client.desc}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
 
-          {/* Duplicated for seamless loop */}
-          {defaultClientLogos.map((logo, idx) => (
-            <div
-              key={`logo-2-${idx}`}
-              className="flex-shrink-0 w-44 h-20 flex items-center justify-center bg-white rounded-2xl p-4 border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all"
-            >
-              <img
-                src={logo.url}
-                alt={logo.name}
-                className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-              />
-            </div>
-          ))}
+          {/* Duplicated for seamless infinite loop */}
+          {clientCompanies.map((client, idx) => {
+            const IconComponent = client.icon;
+            return (
+              <div
+                key={`logo-2-${idx}`}
+                className="flex-shrink-0 px-5 py-3.5 flex items-center gap-3 bg-white rounded-2xl border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all group cursor-default"
+              >
+                <div className="w-9 h-9 rounded-xl bg-[#F0F0FF] text-[#4846D4] flex items-center justify-center group-hover:bg-[#4846D4] group-hover:text-white transition-colors flex-shrink-0">
+                  <IconComponent size={18} />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-extrabold text-[#0D0C41] group-hover:text-[#4846D4] transition-colors font-sans">
+                    {client.name}
+                  </div>
+                  <div className="text-[10px] text-[#555566] font-medium">
+                    {client.desc}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

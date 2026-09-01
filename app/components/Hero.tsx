@@ -15,6 +15,7 @@ import VideoModal from "./VideoModal";
 
 export default function Hero() {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [imgSrc, setImgSrc] = useState("/images/hero-tech.jpg");
 
   return (
     <>
@@ -51,7 +52,7 @@ export default function Hero() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/plans"
-                  className="capsule-btn-primary !py-3.5 !px-8 !text-base font-bold shadow-lg shadow-[#4846D4]/25 btn-shimmer flex items-center gap-2"
+                  className="capsule-btn-primary !py-3.5 !px-8 !text-base font-bold shadow-lg shadow-[#4846D4]/25 btn-shimmer flex items-center gap-2 cursor-pointer"
                 >
                   <span>Explore Open Roles</span>
                   <ArrowUpRight size={18} />
@@ -100,7 +101,8 @@ export default function Hero() {
                   {/* Hero Professional Image */}
                   <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-[#F2F3FC]">
                     <img
-                      src="https://mlnhaefbaoxh.i.optimole.com/w:1920/h:1280/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/img-2.webp"
+                      src={imgSrc}
+                      onError={() => setImgSrc("/Hero.png")}
                       alt="Tech Professional with HireVoTech"
                       className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                     />

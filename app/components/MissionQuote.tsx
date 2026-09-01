@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Quote, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function MissionQuote() {
+  const [imgSrc, setImgSrc] = useState("/images/testimonial-ceo.jpg");
+
   return (
     <section className="py-20 relative overflow-hidden bg-[#FCFCFC]">
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
@@ -15,9 +17,10 @@ export default function MissionQuote() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Image & Avatar Card */}
             <div className="lg:col-span-4 relative">
-              <div className="relative rounded-2xl overflow-hidden aspect-square max-w-xs mx-auto lg:max-w-none shadow-md border border-[#E1E2EE]">
+              <div className="relative rounded-2xl overflow-hidden aspect-square max-w-xs mx-auto lg:max-w-none shadow-md border border-[#E1E2EE] bg-white">
                 <img
-                  src="https://mlnhaefbaoxh.i.optimole.com/w:600/h:600/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Testimonial-5.webp"
+                  src={imgSrc}
+                  onError={() => setImgSrc("/images/hero-tech.jpg")}
                   alt="Michael Chen - Head of Talent Acquisition"
                   className="w-full h-full object-cover"
                 />
