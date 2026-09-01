@@ -41,6 +41,36 @@
   background-size: 24px 24px;
 }
 
+/* Floating animation for cards & badges (Up & Down smooth loop) */
+@keyframes floatUpAndDown1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes floatUpAndDown2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatUpAndDown1 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-float-slower {
+  animation: floatUpAndDown2 5s ease-in-out infinite;
+  animation-delay: 0.4s;
+  will-change: transform;
+}
+
 /* Ambient glow blobs (light mode) */
 .orb-float-1 {
   animation: floatOrb1 18s ease-in-out infinite alternate;
