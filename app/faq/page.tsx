@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { HelpCircle, ChevronDown, Sparkles, MessageCircle } from "lucide-react";
+import CTABanner from "../components/CTABanner";
+import { HelpCircle, ChevronDown } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -24,7 +25,7 @@ const faqs: FAQItem[] = [
   },
   {
     category: "plans",
-    question: "Are EMI payment options available?",
+    question: "Are flexible EMI installment options available?",
     answer: "Yes, we provide flexible installment and EMI structures to ensure our services remain accessible without creating financial stress before your first compensation.",
   },
   {
@@ -44,7 +45,7 @@ const faqs: FAQItem[] = [
   },
   {
     category: "employers",
-    question: "What hiring engagement models do you support?",
+    question: "What hiring engagement models do you support for businesses?",
     answer: "We support Direct Hire (Full-Time), Contract-to-Hire, and dedicated Contract Staff Augmentation models tailored to your project timeline.",
   },
 ];
@@ -58,89 +59,71 @@ export default function FAQPage() {
   );
 
   return (
-    <div className="min-h-screen bg-[#08000d] text-white selection:bg-[#a020f0] selection:text-white relative overflow-hidden font-sans dot-grid">
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#a020f0]/10 blur-[150px] pointer-events-none orb-float-1"></div>
-      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#ff4fd8]/5 blur-[180px] pointer-events-none orb-float-2"></div>
+    <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
+      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 
-      <Navbar scrolled={true} activeSection="" />
+      <Navbar scrolled={true} activeSection="faq" />
 
       {/* Hero Header */}
-      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10">
-        <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-[#c68efd] rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6">
-          <HelpCircle size={14} className="text-[#ff4fd8]" /> Got Questions?
+      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10 space-y-4">
+        <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">
+          <HelpCircle size={14} className="text-[#4846D4]" />
+          <span>Help & FAQ</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-b from-white via-neutral-100 to-neutral-400 bg-clip-text text-transparent mb-6">
-          Frequently Asked <span className="text-[#ff4fd8] drop-shadow-[0_0_25px_rgba(255,79,216,0.35)]">Questions</span>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0D0C41]">
+          Frequently Asked <br />
+          <span className="text-[#4846D4]">
+            Questions.
+          </span>
         </h1>
-        <p className="text-lg text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed">
+        <p className="text-base sm:text-lg text-[#555566] max-w-2xl mx-auto font-normal leading-relaxed">
           Clear answers about our career management plans, pricing structure, interview prep, and corporate staffing solutions.
         </p>
 
         {/* Categories Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mt-10">
-          <button
-            onClick={() => setActiveTab("all")}
-            className={`btn btn-sm rounded-full text-xs font-semibold transition-all ${
-              activeTab === "all"
-                ? "bg-[#a020f0] text-white border-none"
-                : "bg-white/5 border-white/10 text-neutral-300 hover:text-white"
-            }`}
-          >
-            All Questions
-          </button>
-          <button
-            onClick={() => setActiveTab("plans")}
-            className={`btn btn-sm rounded-full text-xs font-semibold transition-all ${
-              activeTab === "plans"
-                ? "bg-[#a020f0] text-white border-none"
-                : "bg-white/5 border-white/10 text-neutral-300 hover:text-white"
-            }`}
-          >
-            Plans & Fees
-          </button>
-          <button
-            onClick={() => setActiveTab("services")}
-            className={`btn btn-sm rounded-full text-xs font-semibold transition-all ${
-              activeTab === "services"
-                ? "bg-[#a020f0] text-white border-none"
-                : "bg-white/5 border-white/10 text-neutral-300 hover:text-white"
-            }`}
-          >
-            Recruitment Services
-          </button>
-          <button
-            onClick={() => setActiveTab("employers")}
-            className={`btn btn-sm rounded-full text-xs font-semibold transition-all ${
-              activeTab === "employers"
-                ? "bg-[#a020f0] text-white border-none"
-                : "bg-white/5 border-white/10 text-neutral-300 hover:text-white"
-            }`}
-          >
-            For Employers
-          </button>
+        <div className="flex flex-wrap justify-center gap-2 pt-6">
+          {[
+            { id: "all", label: "All Questions" },
+            { id: "plans", label: "Plans & Fees" },
+            { id: "services", label: "Recruitment Services" },
+            { id: "employers", label: "For Employers" },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id as any)}
+              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                activeTab === tab.id
+                  ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30"
+                  : "bg-white border border-[#E1E2EE] text-[#0D0C41] hover:text-[#4846D4]"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </section>
 
       {/* Accordion FAQ list */}
-      <section className="py-12 px-4 md:px-8 max-w-4xl mx-auto z-10 relative mb-24">
+      <section className="py-10 px-4 md:px-8 max-w-4xl mx-auto z-10 relative mb-16">
         <div className="space-y-4">
           {filteredFaqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl overflow-hidden border border-white/10 transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden border border-[#E1E2EE] shadow-xs transition-all duration-300"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full text-left p-6 flex justify-between items-center gap-4 hover:bg-white/[0.02] transition-colors"
+                  className="w-full text-left p-6 flex justify-between items-center gap-4 hover:bg-[#F2F3FC] transition-colors cursor-pointer"
                 >
-                  <span className="font-semibold text-base md:text-lg text-white font-mono">
+                  <span className="font-bold text-base md:text-lg text-[#0D0C41]">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-neutral-300 transition-transform duration-300 flex-shrink-0 ${
-                      isOpen ? "rotate-180 bg-[#a020f0]/30 text-white" : ""
+                    className={`w-8 h-8 rounded-full bg-[#F2F3FC] flex items-center justify-center text-[#0D0C41] transition-transform duration-300 flex-shrink-0 ${
+                      isOpen ? "rotate-180 bg-[#4846D4] text-white" : ""
                     }`}
                   >
                     <ChevronDown size={18} />
@@ -148,7 +131,7 @@ export default function FAQPage() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-2 text-sm text-neutral-300 leading-relaxed border-t border-white/5">
+                  <div className="px-6 pb-6 pt-1 text-sm text-[#555566] leading-relaxed font-normal border-t border-[#E1E2EE] animate-fadeIn">
                     {faq.answer}
                   </div>
                 )}
@@ -156,19 +139,10 @@ export default function FAQPage() {
             );
           })}
         </div>
-
-        {/* Still have questions banner */}
-        <div className="mt-16 text-center glass-card rounded-3xl p-8 border border-white/10">
-          <h3 className="text-xl font-bold text-white mb-2">Have a specific question not listed here?</h3>
-          <p className="text-sm text-neutral-400 mb-6">Our career advisors are available to talk you through every detail.</p>
-          <a
-            href="./contact"
-            className="btn bg-[#a020f0] hover:bg-[#8019c0] text-white border-none rounded-full px-8 font-semibold btn-shimmer"
-          >
-            <MessageCircle size={16} /> Talk with an Advisor
-          </a>
-        </div>
       </section>
+
+      {/* CTA */}
+      <CTABanner />
 
       <Footer />
     </div>

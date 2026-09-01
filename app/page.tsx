@@ -4,10 +4,15 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustedClients from "./components/TrustedClients";
-import Approach from "./components/Approach";
-import Process from "./components/Process";
+import MissionQuote from "./components/MissionQuote";
+import TeamSection from "./components/TeamSection";
+import RunningMarquee from "./components/RunningMarquee";
+import ServicesSection from "./components/ServicesSection";
+import JobListingsSection from "./components/JobListingsSection";
 import Stats from "./components/Stats";
-import Testimonials from "./components/Testimonials";
+import FAQSection from "./components/FAQSection";
+import CTABanner from "./components/CTABanner";
+import ArticlesSection from "./components/ArticlesSection";
 import Footer from "./components/Footer";
 
 /* ─── Custom Hook: Scroll Reveal ─── */
@@ -74,61 +79,72 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Scroll reveal refs
-  const approachRef = useScrollReveal();
-  const approachCardsRef = useScrollReveal();
-  const processRef = useScrollReveal();
   const logosRef = useScrollReveal();
   const statsRef = useScrollReveal();
-  const testimonialsRef = useScrollReveal();
 
   // Animated stat counters
   const stat1 = useAnimatedCounter(80, 2000, "%");
   const stat2 = useAnimatedCounter(5, 1500, "+");
   const stat3 = useAnimatedCounter(860, 2500, "+");
   const stat4 = useAnimatedCounter(60, 2000, "+");
+
   const animatedStats = [
     { ...stat1, label: "Placement Success Rate" },
     { ...stat2, label: "Years of Industry Expertise" },
     { ...stat3, label: "Successful Placements" },
-    { ...stat4, label: "Partnered Companies" },
+    { ...stat4, label: "Partnered Tech Companies" },
   ];
 
   return (
-    <div className="min-h-screen bg-[#08000d] text-white selection:bg-[#a020f0] selection:text-white relative overflow-hidden font-sans dot-grid">
-      {/* Floating decorative orbs */}
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#a020f0]/10 blur-[150px] pointer-events-none orb-float-1"></div>
-      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#c68efd]/5 blur-[180px] pointer-events-none orb-float-2"></div>
-      <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#8482ff]/5 blur-[160px] pointer-events-none orb-float-3"></div>
+    <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      {/* Subtle background ambient glow */}
+      <div className="absolute top-[-10%] left-[-5%] w-[550px] h-[550px] rounded-full bg-[#4846D4]/5 blur-[160px] pointer-events-none orb-float-1"></div>
+      <div className="absolute top-[35%] right-[-10%] w-[650px] h-[650px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 
-      {/* ═══ 1. Navbar ═══ */}
-      <Navbar scrolled={scrolled} />
+      {/* ═══ 1. Navbar & Capsule Header ═══ */}
+      <Navbar scrolled={scrolled} activeSection="home" />
 
-      {/* ═══ 2. Hero Section (Cleaned & Focused) ═══ */}
+      {/* ═══ 2. Hero Section ═══ */}
       <Hero />
 
-      {/* ═══ 3. Trusted Clients Logo Slider (Immediate Social Proof) ═══ */}
+      {/* ═══ 3. Trusted Clients Logo Marquee ═══ */}
       <TrustedClients logosRef={logosRef} />
 
-      {/* ═══ 4. Our Approach (4 Core Pillars) ═══ */}
-      <Approach headingRef={approachRef} cardsRef={approachCardsRef} />
+      {/* ═══ 4. Leadership / Mission Quote Card ═══ */}
+      <MissionQuote />
 
-      {/* ═══ 5. Our 7-Step Process (Roadmap) ═══ */}
-      <Process processRef={processRef} />
+      {/* ═══ 5. Meet the People Behind the Mission (Team) ═══ */}
+      <TeamSection />
 
-      {/* ═══ 6. Placement Performance Stats ═══ */}
+      {/* ═══ 6. Dual Tilted Running Text Ticker Banner (-3deg & +3deg) ═══ */}
+      <RunningMarquee />
+
+      {/* ═══ 7. Core Services Grid (4 Pillars) ═══ */}
+      <ServicesSection />
+
+      {/* ═══ 8. Job Listings & Career Categories Tabs ═══ */}
+      <JobListingsSection />
+
+      {/* ═══ 9. Placement Performance Stats ═══ */}
       <Stats statsRef={statsRef} stats={animatedStats} />
 
-      {/* ═══ 7. Testimonials & Client Success Stories ═══ */}
-      <Testimonials testimonialsRef={testimonialsRef} />
+      {/* ═══ 10. FAQ Accordion ═══ */}
+      <FAQSection />
 
-      {/* ═══ 8. Footer ═══ */}
+      {/* ═══ 11. High-Impact CTA Banner ═══ */}
+      <CTABanner />
+
+      {/* ═══ 12. Latest Articles & Industry Insights ═══ */}
+      <ArticlesSection />
+
+      {/* ═══ 13. Modern Footer & Newsletter ═══ */}
       <Footer />
     </div>
   );

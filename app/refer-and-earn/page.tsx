@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Gift, DollarSign, Users, CheckCircle, ArrowRight, Sparkles, Send } from "lucide-react";
+import { Gift, DollarSign, Users, CheckCircle, Sparkles, Send } from "lucide-react";
 
 export default function ReferAndEarn() {
   const [formData, setFormData] = useState({
@@ -24,218 +24,220 @@ export default function ReferAndEarn() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08000d] text-white selection:bg-[#a020f0] selection:text-white relative overflow-hidden font-sans dot-grid">
-      {/* Floating decorative orbs */}
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#a020f0]/10 blur-[150px] pointer-events-none orb-float-1"></div>
-      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#ff4fd8]/5 blur-[180px] pointer-events-none orb-float-2"></div>
+    <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
+      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 
-      <Navbar scrolled={true} activeSection="" />
+      <Navbar scrolled={true} activeSection="refer-and-earn" />
 
       {/* Hero Header */}
-      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10">
-        <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-[#c68efd] rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6">
-          <Gift size={14} className="text-[#ff4fd8]" /> Referral Program
+      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10 space-y-4">
+        <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">
+          <Gift size={14} className="text-[#4846D4]" />
+          <span>Referral Program</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-b from-white via-neutral-100 to-neutral-400 bg-clip-text text-transparent mb-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0D0C41]">
           Refer Talent & Companies. <br />
-          <span className="text-[#ff4fd8] drop-shadow-[0_0_25px_rgba(255,79,216,0.35)]">Earn Generous Rewards.</span>
+          <span className="text-[#4846D4]">
+            Earn Generous Cash Rewards.
+          </span>
         </h1>
-        <p className="text-lg text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed">
-          Know someone looking for their next dream role or a company searching for top-tier tech talent? Refer them to HireVoTech and earn cash rewards upon successful placement.
+        <p className="text-base sm:text-lg text-[#555566] max-w-2xl mx-auto font-normal leading-relaxed">
+          Know someone looking for their next dream role or an engineering leader searching for top tech talent? Refer them to HireVoTech and receive direct wire bonuses.
         </p>
       </section>
 
       {/* Rewards Tier Cards */}
       <section className="py-12 px-4 md:px-8 max-w-6xl mx-auto z-10 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="glass-card rounded-2xl p-8 flex flex-col items-center text-center group hover:border-[#a020f0]/40 transition-all">
-            <div className="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6 text-[#c68efd] group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-3xl p-8 flex flex-col items-center text-center group border border-[#E1E2EE] shadow-md hover:border-[#4846D4]/40 hover:shadow-xl transition-all">
+            <div className="w-14 h-14 rounded-2xl bg-[#F0F0FF] border border-[#4846D4]/20 flex items-center justify-center mb-6 text-[#4846D4] group-hover:scale-110 transition-transform">
               <Users size={28} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Refer a Candidate</h3>
-            <p className="text-sm text-neutral-400 mb-6">Refer software engineers, data analysts, cloud architects, or business analysts.</p>
-            <div className="mt-auto pt-4 border-t border-white/5 w-full">
-              <span className="text-2xl font-bold text-[#c19a4f]">Up to $500</span>
-              <p className="text-xs text-neutral-500 mt-1">Per successful placement</p>
+            <h3 className="text-xl font-bold text-[#0D0C41] mb-2">Refer a Candidate</h3>
+            <p className="text-xs text-[#555566] leading-relaxed font-normal mb-6">Refer software engineers, data analysts, cloud architects, or tech managers.</p>
+            <div className="mt-auto pt-4 border-t border-[#E1E2EE] w-full">
+              <span className="text-2xl font-bold text-[#4846D4]">Up to $500</span>
+              <p className="text-[11px] text-[#555566] mt-1">Per successful placement</p>
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-8 flex flex-col items-center text-center group relative overflow-hidden border-[#ff4fd8]/30 shadow-xl shadow-purple-950/20">
-            <div className="absolute top-0 right-0 bg-[#ff4fd8] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg">
+          <div className="bg-white rounded-3xl p-8 flex flex-col items-center text-center group relative overflow-hidden border-2 border-[#4846D4] shadow-xl shadow-[#4846D4]/10">
+            <div className="absolute top-0 right-0 bg-[#4846D4] text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-xl">
               POPULAR
             </div>
-            <div className="w-14 h-14 rounded-2xl bg-[#ff4fd8]/10 border border-[#ff4fd8]/30 flex items-center justify-center mb-6 text-[#ff4fd8] group-hover:scale-110 transition-transform">
+            <div className="w-14 h-14 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center mb-6 text-purple-600 group-hover:scale-110 transition-transform">
               <DollarSign size={28} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Refer an Employer</h3>
-            <p className="text-sm text-neutral-400 mb-6">Connect us with hiring managers or HR leaders seeking staff augmentation or full-time hires.</p>
-            <div className="mt-auto pt-4 border-t border-white/5 w-full">
-              <span className="text-2xl font-bold text-[#ff4fd8]">Up to $1,500</span>
-              <p className="text-xs text-neutral-500 mt-1">Per signed contract</p>
+            <h3 className="text-xl font-bold text-[#0D0C41] mb-2">Refer an Employer</h3>
+            <p className="text-xs text-[#555566] leading-relaxed font-normal mb-6">Connect us with hiring managers or CTOs seeking tech staff augmentation or full-time hires.</p>
+            <div className="mt-auto pt-4 border-t border-[#E1E2EE] w-full">
+              <span className="text-2xl font-bold text-[#0D0C41]">Up to $1,500</span>
+              <p className="text-[11px] text-[#555566] mt-1">Per signed staffing contract</p>
             </div>
           </div>
 
-          <div className="glass-card rounded-2xl p-8 flex flex-col items-center text-center group hover:border-[#a020f0]/40 transition-all">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+          <div className="bg-white rounded-3xl p-8 flex flex-col items-center text-center group border border-[#E1E2EE] shadow-md hover:border-emerald-500/40 hover:shadow-xl transition-all">
+            <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center mb-6 text-emerald-600 group-hover:scale-110 transition-transform">
               <Sparkles size={28} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-2">Unlimited Referrals</h3>
-            <p className="text-sm text-neutral-400 mb-6">There is no cap on how many referrals you can submit. Track your payouts transparently.</p>
-            <div className="mt-auto pt-4 border-t border-white/5 w-full">
-              <span className="text-2xl font-bold text-emerald-400">Direct Wire / ACH</span>
-              <p className="text-xs text-neutral-500 mt-1">Fast, reliable payouts</p>
+            <h3 className="text-xl font-bold text-[#0D0C41] mb-2">Unlimited Referrals</h3>
+            <p className="text-xs text-[#555566] leading-relaxed font-normal mb-6">There is no cap on how many referrals you can submit. Track your payouts transparently.</p>
+            <div className="mt-auto pt-4 border-t border-[#E1E2EE] w-full">
+              <span className="text-2xl font-bold text-emerald-600">Direct Wire / ACH</span>
+              <p className="text-[11px] text-[#555566] mt-1">Fast, reliable payouts</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* How it Works & Referral Form */}
-      <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <section className="py-12 px-4 md:px-8 max-w-6xl mx-auto z-10 relative mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Steps */}
-          <div>
-            <span className="text-xs uppercase tracking-widest text-[#c19a4f] font-semibold mb-3 block">
+          <div className="space-y-6">
+            <span className="text-xs uppercase tracking-widest text-[#4846D4] font-bold block">
               SIMPLE 3-STEP PROCESS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0D0C41]">
               How the Referral Program Works
             </h2>
 
-            <div className="space-y-6">
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-[#a020f0]/20 border border-[#a020f0]/40 flex items-center justify-center font-bold text-white font-mono flex-shrink-0">
+            <div className="space-y-4 pt-2">
+              <div className="flex gap-4 items-start p-5 bg-white rounded-2xl border border-[#E1E2EE] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#F0F0FF] border border-[#4846D4]/20 flex items-center justify-center font-bold text-[#4846D4] font-mono flex-shrink-0">
                   1
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Submit Details</h4>
-                  <p className="text-sm text-neutral-400 mt-1">Fill out the referral form with your contact info and your friend or client details.</p>
+                  <h4 className="text-base font-bold text-[#0D0C41]">Submit Details</h4>
+                  <p className="text-xs text-[#555566] mt-1 leading-relaxed font-normal">Fill out the referral form with your contact info and your friend or client details.</p>
                 </div>
               </div>
 
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-[#a020f0]/20 border border-[#a020f0]/40 flex items-center justify-center font-bold text-white font-mono flex-shrink-0">
+              <div className="flex gap-4 items-start p-5 bg-white rounded-2xl border border-[#E1E2EE] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center font-bold text-purple-600 font-mono flex-shrink-0">
                   2
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">We Connect & Guide</h4>
-                  <p className="text-sm text-neutral-400 mt-1">Our recruitment team reaches out to evaluate opportunities and onboard them into our pipeline.</p>
+                  <h4 className="text-base font-bold text-[#0D0C41]">We Connect & Guide</h4>
+                  <p className="text-xs text-[#555566] mt-1 leading-relaxed font-normal">Our recruitment team reaches out to evaluate opportunities and onboard them into our pipeline.</p>
                 </div>
               </div>
 
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center font-bold text-emerald-400 font-mono flex-shrink-0">
+              <div className="flex gap-4 items-start p-5 bg-white rounded-2xl border border-[#E1E2EE] shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center font-bold text-emerald-600 font-mono flex-shrink-0">
                   3
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-white">Get Paid</h4>
-                  <p className="text-sm text-neutral-400 mt-1">Once the placement or contract is finalized, your bonus is wired directly to you.</p>
+                  <h4 className="text-base font-bold text-[#0D0C41]">Get Paid Directly</h4>
+                  <p className="text-xs text-[#555566] mt-1 leading-relaxed font-normal">Once the candidate placement or hiring contract is finalized, your bonus is wired directly to you.</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Form */}
-          <div className="glass-card rounded-3xl p-8 md:p-10 relative overflow-hidden border border-white/10 shadow-2xl">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff4fd8] to-transparent"></div>
+          <div className="bg-white rounded-3xl p-8 md:p-10 relative overflow-hidden border border-[#E1E2EE] shadow-2xl">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#4846D4]"></div>
 
             {submitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle size={36} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Referral Received!</h3>
-                <p className="text-sm text-neutral-300 max-w-md mx-auto">
-                  Thank you! Our recruitment team will review the details and reach out. We will keep you updated on the progress.
+                <h3 className="text-2xl font-bold text-[#0D0C41]">Referral Received!</h3>
+                <p className="text-sm text-[#555566] max-w-md mx-auto leading-relaxed">
+                  Thank you! Our recruitment team will review the details and reach out. We will keep you updated on progress.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="btn btn-sm bg-[#a020f0] text-white border-none rounded-full px-6 mt-4"
+                  className="capsule-btn-secondary !py-2 !px-6 !text-xs mt-4"
                 >
                   Submit Another Referral
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="text-xl font-bold text-white mb-4">Submit a Referral</h3>
+                <h3 className="text-xl font-bold text-[#0D0C41] mb-2">Submit a Referral</h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs text-neutral-400 block mb-1 font-medium">Your Name</label>
+                    <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Your Name *</label>
                     <input
                       type="text"
                       required
                       value={formData.yourName}
                       onChange={(e) => setFormData({ ...formData, yourName: e.target.value })}
                       placeholder="Jane Doe"
-                      className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                      className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="text-xs text-neutral-400 block mb-1 font-medium">Your Email</label>
+                    <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Your Email *</label>
                     <input
                       type="email"
                       required
                       value={formData.yourEmail}
                       onChange={(e) => setFormData({ ...formData, yourEmail: e.target.value })}
                       placeholder="jane@example.com"
-                      className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                      className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Referral Type</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Referral Type</label>
                   <select
                     value={formData.referralType}
                     onChange={(e) => setFormData({ ...formData, referralType: e.target.value })}
-                    className="select select-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   >
-                    <option value="candidate" className="bg-[#08000d]">Candidate (Job Seeker)</option>
-                    <option value="employer" className="bg-[#08000d]">Employer / Hiring Manager</option>
+                    <option value="candidate">Candidate (Job Seeker - $500 Reward)</option>
+                    <option value="employer">Employer / Hiring Manager ($1,500 Reward)</option>
                   </select>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs text-neutral-400 block mb-1 font-medium">Referral's Name</label>
+                    <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Referral&apos;s Name *</label>
                     <input
                       type="text"
                       required
                       value={formData.refName}
                       onChange={(e) => setFormData({ ...formData, refName: e.target.value })}
                       placeholder="John Smith"
-                      className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                      className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                     />
                   </div>
                   <div>
-                    <label className="text-xs text-neutral-400 block mb-1 font-medium">Referral's Email</label>
+                    <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Referral&apos;s Email *</label>
                     <input
                       type="email"
                       required
                       value={formData.refEmail}
                       onChange={(e) => setFormData({ ...formData, refEmail: e.target.value })}
                       placeholder="john@example.com"
-                      className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                      className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Notes / Resume Link / Roles (Optional)</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Notes / Role Info (Optional)</label>
                   <textarea
                     rows={3}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                     placeholder="Tell us about their role, current situation, or company hiring needs..."
-                    className="textarea textarea-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="btn bg-[#a020f0] hover:bg-[#8019c0] text-white border-none w-full rounded-full font-semibold mt-4 btn-shimmer flex items-center justify-center gap-2"
+                  className="capsule-btn-primary w-full !py-3.5 !text-sm btn-shimmer flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Send size={16} /> Submit Referral & Claim Reward
+                  <Send size={15} /> Submit Referral & Claim Reward
                 </button>
               </form>
             )}

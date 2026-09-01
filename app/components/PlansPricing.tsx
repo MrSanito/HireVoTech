@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export interface ComparisonRow {
   name: string;
@@ -10,18 +11,18 @@ export interface ComparisonRow {
 }
 
 export const defaultComparisonTable: ComparisonRow[] = [
-  { name: "Profile Marketing", basic: true, premium: true },
-  { name: "Resume Preparation & Optimization", basic: true, premium: true },
-  { name: "LinkedIn Profile Management", basic: true, premium: true },
-  { name: "Daily Job Applications", basic: true, premium: true },
-  { name: "Applications through Leading Job Portals", basic: true, premium: true },
-  { name: "Company Career Website Applications", basic: true, premium: true },
-  { name: "Background Verification (BGC) Assistance", basic: true, premium: true },
-  { name: "Technical Training", basic: false, premium: true },
-  { name: "Interview Support", basic: false, premium: true },
-  { name: "Mock Interview Sessions", basic: false, premium: true },
-  { name: "Personalized Interview Preparation", basic: false, premium: true },
-  { name: "Dedicated Career Guidance", basic: false, premium: true },
+  { name: "Profile Marketing & Strategy", basic: true, premium: true },
+  { name: "Resume Preparation & ATS Optimization", basic: true, premium: true },
+  { name: "LinkedIn Profile Branding Overhaul", basic: true, premium: true },
+  { name: "Daily Targeted Job Submissions", basic: true, premium: true },
+  { name: "Applications Across Top Tier Portals", basic: true, premium: true },
+  { name: "Direct Company Career Portal Submissions", basic: true, premium: true },
+  { name: "Background Verification (BGC) Support", basic: true, premium: true },
+  { name: "Live Technical Training & System Design", basic: false, premium: true },
+  { name: "1-on-1 Interview Support & Coaching", basic: false, premium: true },
+  { name: "Full Mock Interview Drills with Leads", basic: false, premium: true },
+  { name: "Personalized Behavioral Interview Prep", basic: false, premium: true },
+  { name: "Dedicated Executive Career Guidance", basic: false, premium: true },
 ];
 
 interface PlansPricingProps {
@@ -40,44 +41,49 @@ export default function PlansPricing({
   return (
     <>
       {/* ═══ Subscription Plans Table ═══ */}
-      <section id="plans" className="py-24 border-t border-white/5 bg-[#08000d]/60 relative z-10 px-4 md:px-8">
+      <section id="plans" className="py-20 border-t border-[#E1E2EE] bg-[#FCFCFC] relative z-10 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
-          <div ref={plansRef} className="text-center mb-12 reveal">
-            <span className="text-xs uppercase tracking-widest text-[#c19a4f] font-semibold mb-3 block">
-              SUBSCRIPTION PLANS
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
-              Basic and Premium, side by side
+          <div ref={plansRef} className="text-center mb-12 space-y-3">
+            <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">
+              <Sparkles size={14} className="text-[#4846D4]" />
+              <span>Subscription Plans</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0D0C41]">
+              Basic and Premium, <br className="hidden sm:inline" />
+              <span className="text-[#4846D4]">
+                Side by Side.
+              </span>
             </h2>
           </div>
 
-          <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-[#E1E2EE]">
             {/* Table Navigation and Tabs */}
-            <div className="p-6 bg-white/[0.01] border-b border-white/5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="p-6 bg-[#F2F3FC] border-b border-[#E1E2EE] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 className="text-lg font-bold text-white font-mono">Plan Features Comparison</h3>
+                <h3 className="text-base font-bold text-[#0D0C41]">Plan Features Comparison</h3>
+                <p className="text-xs text-[#555566]">Compare full benefits between Basic and Premium tiers</p>
               </div>
-              <div className="tabs tabs-boxed bg-[#08000d] p-1 border border-white/5 rounded-lg">
+              <div className="flex bg-white p-1 border border-[#E1E2EE] rounded-full shadow-xs">
                 <button
                   onClick={() => setSelectedPlanTab("both")}
-                  className={`tab tab-xs sm:tab-sm font-medium transition-all duration-300 ${
-                    selectedPlanTab === "both" ? "tab-active bg-[#a020f0] text-white" : "text-neutral-400 hover:text-white"
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                    selectedPlanTab === "both" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >
                   Both Plans
                 </button>
                 <button
                   onClick={() => setSelectedPlanTab("premium")}
-                  className={`tab tab-xs sm:tab-sm font-medium transition-all duration-300 ${
-                    selectedPlanTab === "premium" ? "tab-active bg-[#a020f0] text-white" : "text-neutral-400 hover:text-white"
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                    selectedPlanTab === "premium" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >
                   Premium Only
                 </button>
                 <button
                   onClick={() => setSelectedPlanTab("basic")}
-                  className={`tab tab-xs sm:tab-sm font-medium transition-all duration-300 ${
-                    selectedPlanTab === "basic" ? "tab-active bg-[#a020f0] text-white" : "text-neutral-400 hover:text-white"
+                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                    selectedPlanTab === "basic" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >
                   Basic Only
@@ -86,37 +92,37 @@ export default function PlansPricing({
             </div>
 
             <div className="overflow-x-auto">
-              <table className="table table-zebra w-full text-left">
+              <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-white/[0.02] border-b border-white/5 text-neutral-300 font-semibold font-mono uppercase tracking-wider text-xs">
+                  <tr className="bg-[#F2F3FC]/50 border-b border-[#E1E2EE] text-[#0D0C41] font-bold uppercase tracking-wider text-xs">
                     <th className="py-4 px-6">Features</th>
                     {selectedPlanTab !== "premium" && <th className="py-4 px-6 text-center">Basic</th>}
-                    {selectedPlanTab !== "basic" && <th className="py-4 px-6 text-center text-[#c19a4f]">Premium</th>}
+                    {selectedPlanTab !== "basic" && <th className="py-4 px-6 text-center text-[#4846D4]">Premium</th>}
                   </tr>
                 </thead>
-                <tbody className="text-neutral-300">
+                <tbody className="text-[#0D0C41] text-xs sm:text-sm">
                   {comparisonTable.map((item, idx) => (
-                    <tr key={idx} className="border-b border-white/5 hover:bg-white/[0.03] transition-colors">
-                      <td className="font-medium py-4 px-6 text-white">{item.name}</td>
+                    <tr key={idx} className="border-b border-[#E1E2EE] hover:bg-[#F2F3FC]/40 transition-colors">
+                      <td className="font-semibold py-4 px-6 text-[#0D0C41]">{item.name}</td>
                       {selectedPlanTab !== "premium" && (
                         <td className="text-center py-4 px-6">
                           {item.basic ? (
-                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20">
-                              <Check size={14} className="text-emerald-400" />
+                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-50 text-emerald-600">
+                              <Check size={14} />
                             </span>
                           ) : (
-                            <span className="text-neutral-600">—</span>
+                            <span className="text-neutral-300">—</span>
                           )}
                         </td>
                       )}
                       {selectedPlanTab !== "basic" && (
                         <td className="text-center py-4 px-6">
                           {item.premium ? (
-                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20">
-                              <Check size={14} className="text-emerald-400" />
+                            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F0F0FF] text-[#4846D4]">
+                              <Check size={14} />
                             </span>
                           ) : (
-                            <span className="text-neutral-600">—</span>
+                            <span className="text-neutral-300">—</span>
                           )}
                         </td>
                       )}
@@ -130,92 +136,105 @@ export default function PlansPricing({
       </section>
 
       {/* ═══ Investment Plans (Cost Card Grid) ═══ */}
-      <section className="py-24 border-t border-white/5 bg-[#08000d]/40 relative z-10 px-4 md:px-8">
+      <section className="py-20 border-t border-[#E1E2EE] bg-[#F2F3FC] relative z-10 px-4 md:px-8">
         <div className="max-w-4xl mx-auto">
-          <div ref={investRef} className="text-center mb-16 reveal">
-            <span className="text-xs uppercase tracking-widest text-[#c19a4f] font-semibold mb-3 block">
-              INVESTMENT PLANS
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+          <div ref={investRef} className="text-center mb-14 space-y-3">
+            <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">
+              <Sparkles size={14} className="text-[#4846D4]" />
+              <span>Investment Plans</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0D0C41]">
               What it costs to work with us
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Basic Card */}
-            <div className="glass-card rounded-2xl shadow-xl group">
-              <div className="card-body p-8">
-                <span className="badge bg-white/5 text-neutral-300 border-none font-bold uppercase tracking-wider text-xs px-3 py-2 mb-4">
+            <div className="bg-white rounded-3xl p-8 border border-[#E1E2EE] shadow-md flex flex-col justify-between">
+              <div>
+                <span className="inline-block bg-[#F2F3FC] text-[#0D0C41] border border-[#E1E2EE] font-bold uppercase tracking-wider text-xs px-3.5 py-1.5 rounded-full mb-6">
                   Basic Plan
                 </span>
-                <div className="divider my-2 border-white/5"></div>
                 <div className="space-y-4 my-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Upfront Fee</span>
-                    <span className="text-2xl font-bold text-[#c19a4f]">USD $1,500</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Upfront Fee</span>
+                    <span className="text-xl font-bold text-[#0D0C41]">USD $1,500</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Offer Acceptance Fee</span>
-                    <span className="text-lg font-semibold text-white">USD $1,000</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Offer Acceptance Fee</span>
+                    <span className="text-base font-bold text-[#0D0C41]">USD $1,000</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Success Fee</span>
-                    <span className="text-lg font-semibold text-emerald-400">12% of Year 1 pay</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Success Fee</span>
+                    <span className="text-base font-bold text-emerald-600">12% of Year 1 pay</span>
                   </div>
                 </div>
-                <div className="divider my-2 border-white/5"></div>
-                <ul className="text-xs text-neutral-400 space-y-2 leading-relaxed">
+                <ul className="text-xs text-[#555566] space-y-2.5 leading-relaxed pt-2">
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> Payable after receiving your first salary.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> Payable after receiving your first salary.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> EMI options available.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> Flexible 3-month EMI options available.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> Success fee payable within 3 months.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> Dedicated daily application management.
                   </li>
                 </ul>
+              </div>
+
+              <div className="pt-8">
+                <Link
+                  href="/contact"
+                  className="capsule-btn-secondary w-full !py-3 !text-xs font-bold"
+                >
+                  Choose Basic Plan
+                </Link>
               </div>
             </div>
 
             {/* Premium Card */}
-            <div className="glass-card rounded-2xl relative overflow-hidden animate-border-glow !border-2 !border-[#a020f0] group">
-              <div className="absolute top-0 right-0 bg-[#a020f0] text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-bl-lg">
+            <div className="bg-white rounded-3xl p-8 border-2 border-[#4846D4] relative overflow-hidden flex flex-col justify-between shadow-xl shadow-[#4846D4]/10">
+              <div className="absolute top-0 right-0 bg-[#4846D4] text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-2xl">
                 RECOMMENDED
               </div>
-              {/* Gradient glow inside */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#a020f0]/5 via-transparent to-[#a020f0]/3 pointer-events-none"></div>
-              <div className="card-body p-8 relative z-10">
-                <span className="badge bg-[#a020f0]/20 text-[#c68efd] border-none font-bold uppercase tracking-wider text-xs px-3 py-2 mb-4">
-                  Premium Plan
+              <div>
+                <span className="inline-block bg-[#F0F0FF] text-[#4846D4] border border-[#4846D4]/20 font-bold uppercase tracking-wider text-xs px-3.5 py-1.5 rounded-full mb-6">
+                  Premium Coaching Plan
                 </span>
-                <div className="divider my-2 border-white/5"></div>
                 <div className="space-y-4 my-6">
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Upfront Fee</span>
-                    <span className="text-2xl font-bold text-[#c19a4f]">USD $3,000</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Upfront Fee</span>
+                    <span className="text-xl font-bold text-[#0D0C41]">USD $3,000</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Offer Acceptance Fee</span>
-                    <span className="text-lg font-semibold text-white">USD $2,500</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Offer Acceptance Fee</span>
+                    <span className="text-base font-bold text-[#0D0C41]">USD $2,500</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-neutral-400">Success Fee</span>
-                    <span className="text-lg font-semibold text-emerald-400">10% of Year 1 pay</span>
+                  <div className="flex justify-between items-center pb-3 border-b border-[#E1E2EE]">
+                    <span className="text-xs text-[#555566]">Success Fee</span>
+                    <span className="text-base font-bold text-emerald-600">10% of Year 1 pay</span>
                   </div>
                 </div>
-                <div className="divider my-2 border-white/5"></div>
-                <ul className="text-xs text-neutral-400 space-y-2 leading-relaxed">
+                <ul className="text-xs text-[#555566] space-y-2.5 leading-relaxed pt-2">
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> Payable after receiving your first salary.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> Full technical & system design mock drills.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> EMI options available.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> 1-on-1 interview prep with senior FAANG mentors.
                   </li>
                   <li className="flex items-center gap-2">
-                    <Check size={12} className="text-emerald-400" /> Success fee payable within 3 months.
+                    <Check size={14} className="text-emerald-600 flex-shrink-0" /> Success fee payable within 3 months of 1st salary.
                   </li>
                 </ul>
+              </div>
+
+              <div className="pt-8">
+                <Link
+                  href="/contact"
+                  className="capsule-btn-primary w-full !py-3 !text-xs btn-shimmer"
+                >
+                  Choose Premium Plan <ArrowRight size={15} />
+                </Link>
               </div>
             </div>
           </div>

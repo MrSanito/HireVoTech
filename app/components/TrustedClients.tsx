@@ -1,61 +1,67 @@
 "use client";
 
 import React from "react";
+import { Building2 } from "lucide-react";
 
-export const defaultClientLogos: string[] = [
-  "https://framerusercontent.com/images/vRlMVcd1MmicJ9t5LsWOhee9iwo.png",
-  "https://framerusercontent.com/images/1wvDdiubX6xWYsZB43JXAs6Vje4.png",
-  "https://framerusercontent.com/images/i4SR0kJCha6bGQOCnT5DghPE.png",
-  "https://framerusercontent.com/images/T6XRoD8cNpQqdJCq4NGf82RGJVQ.png",
-  "https://framerusercontent.com/images/6fzKPiSTFaZLMY9pxIS6bZqCnI.png",
-  "https://framerusercontent.com/images/LrB7SG6Pf0Qyo8nQt2vHGZgAg.png",
-  "https://framerusercontent.com/images/KiHBaaTse93OTRmlSzGNpbuxXw4.png",
-  "https://framerusercontent.com/images/VYVknS3K7ZDkhzOnhUpM0OMz1X0.png",
-  "https://framerusercontent.com/images/3pc3KZPsrZ4baSUfyFZJV0pvE.png",
-  "https://framerusercontent.com/images/2Y7k1FKpVWgXybFiWDcWsLlVM.png",
-  "https://framerusercontent.com/images/7hM6O95Tt5pJJS87R8WxXp2SQc.png",
-  "https://framerusercontent.com/images/1pF5JL1ALSclLCKquPGZNY9cNQ.png",
+export const defaultClientLogos: { name: string; url: string }[] = [
+  { name: "ProJob Tech", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-1.png" },
+  { name: "Venture Corp", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-2.png" },
+  { name: "Apex Labs", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-3.png" },
+  { name: "CloudScale", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-4.png" },
+  { name: "Global Networks", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-5.png" },
+  { name: "Alpha Tech", url: "https://mlnhaefbaoxh.i.optimole.com/w:600/h:200/q:mauto/f:best/https://kits.rometheme.net/projob/wp-content/uploads/sites/71/2025/06/Client-6.png" },
+  { name: "ScaleForce", url: "https://framerusercontent.com/images/vRlMVcd1MmicJ9t5LsWOhee9iwo.png" },
+  { name: "DevCore", url: "https://framerusercontent.com/images/1wvDdiubX6xWYsZB43JXAs6Vje4.png" },
+  { name: "NextGen", url: "https://framerusercontent.com/images/i4SR0kJCha6bGQOCnT5DghPE.png" },
+  { name: "CyberMatrix", url: "https://framerusercontent.com/images/T6XRoD8cNpQqdJCq4NGf82RGJVQ.png" }
 ];
 
 interface TrustedClientsProps {
   logosRef?: React.RefObject<HTMLDivElement | null>;
-  clientLogos?: string[];
 }
 
-export default function TrustedClients({
-  logosRef,
-  clientLogos = defaultClientLogos,
-}: TrustedClientsProps) {
+export default function TrustedClients({ logosRef }: TrustedClientsProps) {
   return (
-    <section className="py-20 border-t border-white/5 bg-[#08000d]/60 relative z-10">
-      <div ref={logosRef} className="max-w-6xl mx-auto px-4 md:px-8 text-center mb-12 reveal">
-        <div className="inline-flex items-center gap-2 bg-purple-500/10 text-[#c68efd] border border-purple-500/20 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider w-fit mb-4">
-          Company
+    <section className="py-16 border-y border-[#E1E2EE] bg-[#F2F3FC] relative z-10 overflow-hidden">
+      <div ref={logosRef} className="max-w-6xl mx-auto px-4 md:px-8 text-center mb-8">
+        <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1 text-xs font-bold uppercase tracking-wider mx-auto mb-3">
+          <Building2 size={13} className="text-[#4846D4]" />
+          <span>Our Partner Network</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Meet Our Trusted Clients</h2>
+        <h2 className="text-2xl md:text-3xl font-extrabold text-[#0D0C41] tracking-tight">
+          Trusted by 60+ Fast-Growing Tech Enterprises & Startups
+        </h2>
       </div>
 
       {/* Infinite scrolling logo track */}
-      <div className="w-full relative overflow-hidden py-4 mask-gradient">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#08000d] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#08000d] to-transparent z-10 pointer-events-none"></div>
+      <div className="w-full relative overflow-hidden py-2">
+        <div className="absolute left-0 top-0 bottom-0 w-28 bg-gradient-to-r from-[#F2F3FC] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-28 bg-gradient-to-l from-[#F2F3FC] to-transparent z-10 pointer-events-none"></div>
 
-        <div className="flex gap-12 animate-marquee whitespace-nowrap min-w-full">
-          {clientLogos.map((logo, idx) => (
-            <div key={idx} className="flex-shrink-0 w-36 h-16 flex items-center justify-center glass-card rounded-xl p-3 !shadow-none">
+        <div className="flex gap-8 animate-marquee whitespace-nowrap min-w-full items-center">
+          {defaultClientLogos.map((logo, idx) => (
+            <div
+              key={`logo-1-${idx}`}
+              className="flex-shrink-0 w-44 h-20 flex items-center justify-center bg-white rounded-2xl p-4 border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all"
+            >
               <img
-                src={logo}
-                alt={`Partner Logo ${idx + 1}`}
-                className="max-w-full max-h-full object-contain filter opacity-60 hover:opacity-100 transition-opacity duration-300"
+                src={logo.url}
+                alt={logo.name}
+                className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}
-          {clientLogos.map((logo, idx) => (
-            <div key={`dup-${idx}`} className="flex-shrink-0 w-36 h-16 flex items-center justify-center glass-card rounded-xl p-3 !shadow-none">
+
+          {/* Duplicated for seamless loop */}
+          {defaultClientLogos.map((logo, idx) => (
+            <div
+              key={`logo-2-${idx}`}
+              className="flex-shrink-0 w-44 h-20 flex items-center justify-center bg-white rounded-2xl p-4 border border-[#E1E2EE] shadow-xs hover:border-[#4846D4]/40 hover:shadow-md transition-all"
+            >
               <img
-                src={logo}
-                alt={`Partner Logo Duplicate ${idx + 1}`}
-                className="max-w-full max-h-full object-contain filter opacity-60 hover:opacity-100 transition-opacity duration-300"
+                src={logo.url}
+                alt={logo.name}
+                className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>
           ))}

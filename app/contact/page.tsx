@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Mail, Phone, MapPin, Globe, Send, CheckCircle2, Clock, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, Clock, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,77 +20,80 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08000d] text-white selection:bg-[#a020f0] selection:text-white relative overflow-hidden font-sans dot-grid">
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#a020f0]/10 blur-[150px] pointer-events-none orb-float-1"></div>
-      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#ff4fd8]/5 blur-[180px] pointer-events-none orb-float-2"></div>
+    <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
+      <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 
-      <Navbar scrolled={true} activeSection="" />
+      <Navbar scrolled={true} activeSection="contact" />
 
       {/* Hero Header */}
-      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10">
-        <div className="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-[#c68efd] rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest mb-6">
-          <MessageSquare size={14} className="text-[#ff4fd8]" /> Get In Touch
+      <section className="relative pt-32 pb-16 px-4 md:px-8 max-w-5xl mx-auto text-center z-10 space-y-4">
+        <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">
+          <MessageSquare size={14} className="text-[#4846D4]" />
+          <span>Get In Touch</span>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-b from-white via-neutral-100 to-neutral-400 bg-clip-text text-transparent mb-6">
-          Let&apos;s Build Your Career Path. <br />
-          <span className="text-[#ff4fd8] drop-shadow-[0_0_25px_rgba(255,79,216,0.35)]">Contact HireVoTech.</span>
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#0D0C41]">
+          Let&apos;s Build Your Tech Career Path. <br />
+          <span className="text-[#4846D4]">
+            Contact HireVoTech.
+          </span>
         </h1>
-        <p className="text-lg text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed">
-          Have questions about our career marketing plans, interview prep training, or corporate staffing solutions? We are here to help.
+        <p className="text-base sm:text-lg text-[#555566] max-w-2xl mx-auto font-normal leading-relaxed">
+          Have questions about our talent sourcing, career plans, interview prep, or corporate recruitment solutions? We are here to help.
         </p>
       </section>
 
       {/* Main Grid */}
-      <section className="py-12 px-4 md:px-8 max-w-6xl mx-auto z-10 relative mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <section className="py-8 px-4 md:px-8 max-w-6xl mx-auto z-10 relative mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Contact Details Card */}
           <div className="space-y-6">
-            <div className="glass-card rounded-3xl p-8 space-y-6 border border-white/10">
-              <h3 className="text-2xl font-bold text-white">Direct Contacts</h3>
-              <p className="text-sm text-neutral-400 leading-relaxed">
-                Reach out directly to our Houston recruitment headquarters or our global advisory team.
+            <div className="bg-white rounded-3xl p-8 space-y-6 border border-[#E1E2EE] shadow-md">
+              <h3 className="text-2xl font-bold text-[#0D0C41]">Direct Advisory Contacts</h3>
+              <p className="text-xs text-[#555566] leading-relaxed font-normal">
+                Reach out directly to our recruitment specialists or schedule a 1-on-1 strategic consultation.
               </p>
 
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-[#a020f0] flex-shrink-0">
-                    <MapPin size={20} />
+              <div className="space-y-3 pt-2">
+                <div className="flex items-start gap-4 p-4 bg-[#F2F3FC] rounded-2xl border border-[#E1E2EE]">
+                  <div className="w-10 h-10 rounded-xl bg-[#F0F0FF] border border-[#4846D4]/20 flex items-center justify-center text-[#4846D4] flex-shrink-0">
+                    <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">United States Office</h4>
-                    <p className="text-xs text-neutral-400 mt-1">17350 STATE HWY, 249 STE 220 Houston TX, USA-77064</p>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">United States Office</h4>
+                    <p className="text-xs text-[#555566] mt-1">17350 STATE HWY, 249 STE 220 Houston TX, USA-77064</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-[#a020f0] flex-shrink-0">
-                    <Mail size={20} />
+                <div className="flex items-start gap-4 p-4 bg-[#F2F3FC] rounded-2xl border border-[#E1E2EE]">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0">
+                    <Mail size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">Email Address</h4>
-                    <a href="mailto:info@hirevotech.com" className="text-xs text-[#c68efd] hover:underline mt-1 block">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">Email Address</h4>
+                    <a href="mailto:info@hirevotech.com" className="text-xs text-[#4846D4] hover:underline mt-1 block font-semibold">
                       info@hirevotech.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-[#a020f0] flex-shrink-0">
-                    <Phone size={20} />
+                <div className="flex items-start gap-4 p-4 bg-[#F2F3FC] rounded-2xl border border-[#E1E2EE]">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                    <Phone size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">Call / WhatsApp</h4>
-                    <p className="text-xs text-neutral-400 mt-1">+91 95748 44683</p>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">Phone / WhatsApp</h4>
+                    <p className="text-xs text-[#555566] mt-1">+1 (800) 480-TECH &nbsp;|&nbsp; +91 95748 44683</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 glass-card rounded-2xl">
-                  <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-[#a020f0] flex-shrink-0">
-                    <Clock size={20} />
+                <div className="flex items-start gap-4 p-4 bg-[#F2F3FC] rounded-2xl border border-[#E1E2EE]">
+                  <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 flex-shrink-0">
+                    <Clock size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">Operating Hours</h4>
-                    <p className="text-xs text-neutral-400 mt-1">Monday – Friday: 9:00 AM – 6:00 PM CST</p>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">Operating Hours</h4>
+                    <p className="text-xs text-[#555566] mt-1">Monday – Friday: 9:00 AM – 6:00 PM EST (24/7 Candidate Support)</p>
                   </div>
                 </div>
               </div>
@@ -98,79 +101,82 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="glass-card rounded-3xl p-8 md:p-10 relative overflow-hidden border border-white/10 shadow-2xl">
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff4fd8] to-transparent"></div>
+          <div className="bg-white rounded-3xl p-8 md:p-10 relative overflow-hidden border border-[#E1E2EE] shadow-xl">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-[#4846D4]"></div>
 
             {submitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 size={36} />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
-                <p className="text-sm text-neutral-300 max-w-md mx-auto">
-                  Thank you for contacting HireVoTech. An advisor will get back to you shortly.
+                <h3 className="text-2xl font-bold text-[#0D0C41]">Message Sent!</h3>
+                <p className="text-sm text-[#555566] max-w-md mx-auto leading-relaxed">
+                  Thank you for contacting HireVoTech. An assigned recruitment manager will reach out within 24 hours.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="text-2xl font-bold text-white mb-2">Send Us a Message</h3>
-                <p className="text-sm text-neutral-400 mb-6">Fill out the form below and we will respond within 24 hours.</p>
+                <div>
+                  <h3 className="text-2xl font-bold text-[#0D0C41] mb-1">Send Us a Message</h3>
+                  <p className="text-xs text-[#555566]">Fill out the form below and we will respond within 24 hours.</p>
+                </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Your Name</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Your Name *</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Full Name"
-                    className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    placeholder="Alex Morgan"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Your Email</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Your Email *</label>
                   <input
                     type="email"
                     required
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="you@domain.com"
-                    className="input input-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    placeholder="alex@domain.com"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Topic / Subject</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Inquiry Subject</label>
                   <select
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                    className="select select-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   >
-                    <option value="Career Support & Consultation" className="bg-[#08000d]">Career Support & Consultation</option>
-                    <option value="Basic & Premium Plans Question" className="bg-[#08000d]">Basic & Premium Plans Question</option>
-                    <option value="Employer Staffing Inquiry" className="bg-[#08000d]">Employer Staffing Inquiry</option>
-                    <option value="Other / General" className="bg-[#08000d]">Other / General Inquiry</option>
+                    <option value="Career Support & Consultation">Candidate Placement & Career Coaching</option>
+                    <option value="Basic & Premium Plans Question">Pricing Plans & Deferred Fees</option>
+                    <option value="Employer Staffing Inquiry">Employer Tech Hiring & Sourcing</option>
+                    <option value="Referral Program">Refer & Earn Program ($500 Bonus)</option>
+                    <option value="Other / General">Other General Inquiry</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="text-xs text-neutral-400 block mb-1 font-medium">Your Message</label>
+                  <label className="text-xs font-bold text-[#0D0C41] uppercase tracking-wider block mb-1.5">Your Message *</label>
                   <textarea
                     rows={4}
                     required
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    placeholder="How can we assist you with your career or hiring requirements?"
-                    className="textarea textarea-sm w-full bg-white/5 border-white/10 text-white rounded-xl focus:border-[#ff4fd8] focus:outline-none"
+                    placeholder="How can we assist you with your career or engineering hiring requirements?"
+                    className="w-full bg-white border border-[#E1E2EE] text-[#0D0C41] rounded-xl px-4 py-2.5 text-sm focus:border-[#4846D4] focus:outline-none transition-colors"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="btn bg-[#a020f0] hover:bg-[#8019c0] text-white border-none w-full rounded-full font-semibold mt-4 btn-shimmer flex items-center justify-center gap-2"
+                  className="capsule-btn-primary w-full !py-3.5 !text-sm mt-2 btn-shimmer flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <Send size={16} /> Send Message
+                  <Send size={15} /> Send Message
                 </button>
               </form>
             )}
