@@ -54,7 +54,7 @@ export default function Footer() {
                 <span>Thank you! You have successfully subscribed to our weekly newsletter.</span>
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 bg-[#F2F3FC] border border-[#E1E2EE] p-1.5 rounded-full shadow-inner focus-within:border-[#4846D4] focus-within:bg-white transition-all">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 bg-[#F2F3FC] border border-[#E1E2EE] p-1.5 rounded-2xl sm:rounded-full shadow-inner focus-within:border-[#4846D4] focus-within:bg-white transition-all">
                 <input
                   type="email"
                   required
@@ -114,7 +114,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-[#555566] font-medium">
               <li><Link href="/" className="hover:text-[#4846D4] transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-[#4846D4] transition-colors">About Us</Link></li>
-              <li><Link href="/about#team" className="hover:text-[#4846D4] transition-colors">Our Team</Link></li>
+              <li><Link href="/#feedbacks" className="hover:text-[#4846D4] transition-colors">Success Stories</Link></li>
               <li><Link href="/process" className="hover:text-[#4846D4] transition-colors">7-Step Roadmap</Link></li>
               <li><Link href="/faq" className="hover:text-[#4846D4] transition-colors">Help & FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-[#4846D4] transition-colors">Contact Us</Link></li>

@@ -63,10 +63,10 @@ export default function PlansPricing({
                 <h3 className="text-base font-bold text-[#0D0C41]">Plan Features Comparison</h3>
                 <p className="text-xs text-[#555566]">Compare full benefits between Basic and Premium tiers</p>
               </div>
-              <div className="flex bg-white p-1 border border-[#E1E2EE] rounded-full shadow-xs">
+              <div className="flex flex-wrap sm:flex-nowrap bg-white p-1 border border-[#E1E2EE] rounded-2xl sm:rounded-full shadow-xs w-full sm:w-auto justify-center gap-1 sm:gap-0">
                 <button
                   onClick={() => setSelectedPlanTab("both")}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer text-center ${
                     selectedPlanTab === "both" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >
@@ -74,7 +74,7 @@ export default function PlansPricing({
                 </button>
                 <button
                   onClick={() => setSelectedPlanTab("premium")}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer text-center ${
                     selectedPlanTab === "premium" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >
@@ -82,7 +82,7 @@ export default function PlansPricing({
                 </button>
                 <button
                   onClick={() => setSelectedPlanTab("basic")}
-                  className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  className={`flex-1 sm:flex-initial px-3 sm:px-4 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer text-center ${
                     selectedPlanTab === "basic" ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30" : "text-[#0D0C41] hover:text-[#4846D4]"
                   }`}
                 >

@@ -4,8 +4,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MissionQuote from "../components/MissionQuote";
-import TeamSection from "../components/TeamSection";
 import Stats from "../components/Stats";
+import FeedbackSection from "../components/FeedbackSection";
 import CTABanner from "../components/CTABanner";
 import TrustedClients from "../components/TrustedClients";
 import { Users, Sparkles, Target, Award } from "lucide-react";
@@ -73,10 +73,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Showcase */}
-      <div id="team">
-        <TeamSection />
-      </div>
+      {/* Candidate Success Stories & Reviews */}
+      <FeedbackSection />
 
       {/* Stats Overview */}
       <Stats />

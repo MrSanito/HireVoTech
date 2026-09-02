@@ -5,10 +5,10 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustedClients from "./components/TrustedClients";
 import MissionQuote from "./components/MissionQuote";
-import TeamSection from "./components/TeamSection";
 import RunningMarquee from "./components/RunningMarquee";
 import ServicesSection from "./components/ServicesSection";
 import JobListingsSection from "./components/JobListingsSection";
+import FeedbackSection from "./components/FeedbackSection";
 import Stats from "./components/Stats";
 import FAQSection from "./components/FAQSection";
 import CTABanner from "./components/CTABanner";
@@ -120,17 +120,17 @@ export default function Home() {
       {/* ═══ 4. Leadership / Mission Quote Card ═══ */}
       <MissionQuote />
 
-      {/* ═══ 5. Meet the People Behind the Mission (Team) ═══ */}
-      <TeamSection />
-
-      {/* ═══ 6. Dual Tilted Running Text Ticker Banner (-3deg & +3deg) ═══ */}
+      {/* ═══ 5. Dual Tilted Running Text Ticker Banner (-3deg & +3deg) ═══ */}
       <RunningMarquee />
 
       {/* ═══ 7. Core Services Grid (4 Pillars) ═══ */}
       <ServicesSection />
 
-      {/* ═══ 8. Job Listings & Career Categories Tabs ═══ */}
+      {/* ═══ 7. Job Listings & Career Categories Tabs ═══ */}
       <JobListingsSection />
+
+      {/* ═══ 8. Candidate Success Stories & Verified Feedback ═══ */}
+      <FeedbackSection />
 
       {/* ═══ 9. Placement Performance Stats ═══ */}
       <Stats statsRef={statsRef} stats={animatedStats} />

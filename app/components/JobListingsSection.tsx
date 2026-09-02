@@ -156,7 +156,7 @@ export default function JobListingsSection() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12 bg-[#F2F3FC] border border-[#E1E2EE] rounded-full p-1.5 max-w-2xl mx-auto shadow-xs">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-10 sm:mb-12 bg-[#F2F3FC] border border-[#E1E2EE] rounded-2xl sm:rounded-full p-1 sm:p-1.5 max-w-2xl mx-auto shadow-xs">
             {[
               { id: "all", label: "All Roles" },
               { id: "technology", label: "Engineering & Tech" },
@@ -167,7 +167,7 @@ export default function JobListingsSection() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === tab.id
                     ? "bg-[#4846D4] text-white shadow-md shadow-[#4846D4]/30"
                     : "text-[#0D0C41] hover:text-[#4846D4] hover:bg-white"
