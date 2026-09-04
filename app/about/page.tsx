@@ -55,9 +55,9 @@ export default function AboutPage() {
             <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
               <Award size={24} />
             </div>
-            <h3 className="text-xl font-bold text-[#0D0C41]">Zero Upfront Risk</h3>
+            <h3 className="text-xl font-bold text-[#0D0C41]">Success-Driven Model</h3>
             <p className="text-xs text-[#555566] leading-relaxed font-normal">
-              Our career marketing success fee is tied to your success. You only pay after landing your offer and receiving your first paycheck.
+              Our career marketing success fee is tied to your success. Success fees are payable only after landing your offer and receiving your first paycheck.
             </p>
           </div>
 

@@ -33,7 +33,7 @@ export interface CandidateFeedback {
 const candidateFeedbacks: CandidateFeedback[] = [
   {
     id: "1",
-    name: "Udhayan K.",
+    name: "Udhayan Krishnan",
     role: "Senior Software Engineer",
     company: "Series-B Fintech",
     placedTime: "Placed in 14 days",
@@ -78,12 +78,12 @@ const candidateFeedbacks: CandidateFeedback[] = [
   },
   {
     id: "4",
-    name: "Anonymous Candidate",
+    name: "Aniket Verma",
     role: "Finance & Tech Professional",
     company: "Bloomberg LP",
     placedTime: "Placed in 12 days",
     offer: "+$175,000",
-    avatar: "AC",
+    avatar: "AV",
     color: "from-amber-500 to-orange-400",
     strategyTag: "Cold Email Note to Bloomberg",
     stars: 5,
@@ -118,7 +118,7 @@ const candidateFeedbacks: CandidateFeedback[] = [
     strategyTag: "Direct VP Outreach & Speed",
     stars: 5,
     highlight: "In front of Engineering VPs within 2 weeks",
-    review: "The resume transformation and reverse-headhunting strategy put my profile directly in front of Engineering VPs. I skipped automated applicant tracking screeners and had 4 hiring manager rounds scheduled within 10 days. The deferred fee model gave me total peace of mind.",
+    review: "The resume transformation and reverse-headhunting strategy put my profile directly in front of Engineering VPs. I skipped automated applicant tracking screeners and had 4 hiring manager rounds scheduled within 10 days. The deferred fee structure gave me total peace of mind.",
     date: "June 2026"
   }
 ];
@@ -188,7 +188,7 @@ export default function FeedbackSection() {
               <span>Guaranteed</span>
             </div>
             <div className="text-xl sm:text-2xl font-black text-[#0D0C41]">100%</div>
-            <div className="text-[11px] sm:text-xs text-[#555566] font-medium">Pay Only When Placed</div>
+            <div className="text-[11px] sm:text-xs text-[#555566] font-medium">Dedicated Career Support</div>
           </div>
         </div>
 
@@ -287,7 +287,7 @@ export default function FeedbackSection() {
               Let&apos;s Accelerate Your Tech Career Today.
             </h3>
             <p className="text-xs sm:text-sm text-[#D1D3F8] leading-relaxed">
-              Zero upfront fees. 1-on-1 interview preparation, executive marketing, and deferred placement fees.
+              Transparent investment plans. 1-on-1 interview preparation, executive marketing, and deferred placement fees.
             </p>
           </div>
 

@@ -46,8 +46,8 @@ export default function MissionQuote() {
                       <ShieldCheck size={16} />
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#0D0C41]">Zero Upfront Risk</div>
-                      <div className="text-[10.5px] text-[#555566]">Pay only after landing your job</div>
+                      <div className="text-xs font-bold text-[#0D0C41]">Guaranteed Outcome</div>
+                      <div className="text-[10.5px] text-[#555566]">Success-driven career marketing</div>
                     </div>
                   </div>
 

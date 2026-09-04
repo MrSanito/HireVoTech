@@ -53,7 +53,7 @@ export default function PlansPage() {
           </span>
         </h1>
         <p className="text-base sm:text-lg text-[#555566] max-w-3xl mx-auto font-normal leading-relaxed">
-          Zero upfront risk. Choose between our Basic Career Marketing plan or Premium Full-Coaching plan with 1-on-1 interview preparation, EMI support, and post-placement payments.
+          Transparent investment plans. Choose between our Basic Career Marketing plan or Premium Full-Coaching plan with 1-on-1 interview preparation, EMI support, and post-placement payments.
         </p>
       </section>
 

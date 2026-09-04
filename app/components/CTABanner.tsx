@@ -38,7 +38,7 @@ export default function CTABanner() {
                 <CheckCircle2 size={14} className="text-emerald-300" /> Guaranteed Placements
               </span>
               <span className="flex items-center gap-1.5 bg-black/15 border border-white/20 rounded-full px-4 py-1.5 shadow-xs">
-                <ShieldCheck size={14} className="text-amber-300" /> Zero Upfront Risk
+                <ShieldCheck size={14} className="text-amber-300" /> Transparent Pricing
               </span>
               <span className="flex items-center gap-1.5 bg-black/15 border border-white/20 rounded-full px-4 py-1.5 shadow-xs">
                 <Sparkles size={14} className="text-white" /> 1-on-1 Interview Coaching

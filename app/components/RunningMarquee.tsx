@@ -23,7 +23,7 @@ export default function RunningMarquee({
     "Work Better.",
     "Hire Smarter.",
     "300% Faster Hiring.",
-    "Zero Upfront Cost.",
+    "Top Tech Placements.",
     "Work Better.",
     "Hire Smarter.",
     "Guaranteed Placement.",

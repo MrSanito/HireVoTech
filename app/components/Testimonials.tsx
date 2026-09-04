@@ -9,7 +9,7 @@ export interface TestimonialItem {
 
 export const defaultTestimonials: TestimonialItem[] = [
   {
-    name: "Udhayan",
+    name: "Udhayan Krishnan",
     text: "I am writing to let you know how thankful I am for the exceptional service I have received. The professionalism and expertise demonstrated by your team have been truly exemplary. I want to extend a special thanks to Nilam Chauhan, our marketing specialist, whose efforts in connecting us with relevant companies have resulted in significant success. Her approach and commitment to excellence have been invaluable to me. Additionally, I want to express my appreciation to Riya Soni, my career advisor, for her invaluable guidance. Her personalized support has greatly facilitated my journey. This collaboration has been transformative. Thank you once again for your dedication and service.",
   },
   {
@@ -18,7 +18,19 @@ export const defaultTestimonials: TestimonialItem[] = [
   },
   {
     name: "Prasham Parekh",
-    text: "I wanted to take a moment to express my heartfelt gratitude for the incredible support and guidance I received throughout my job search journey with Zenith consultancy. Thanks to your expert advice and tireless efforts, I have successfully landed my first job in the United States—a milestone that feels both exciting and deeply meaningful. A special thanks to Nilam whose dedication and persistence stood out remarkably. She went above and beyond to understand my strengths, communicate clearly, and follow up diligently—often acting as both a motivator and a strategist. It made a significant difference to have someone so invested in my journey. I am genuinely thankful to have partnered with your consultancy, and I look forward to recommending your services to others seeking career support.",
+    text: "I wanted to take a moment to express my heartfelt gratitude for the incredible support and guidance I received throughout my job search journey with HireVoTech. Thanks to your expert advice and tireless efforts, I have successfully landed my first job in the United States—a milestone that feels both exciting and deeply meaningful. A special thanks to Nilam whose dedication and persistence stood out remarkably. She went above and beyond to understand my strengths, communicate clearly, and follow up diligently—often acting as both a motivator and a strategist. It made a significant difference to have someone so invested in my journey. I am genuinely thankful to have partnered with your consultancy, and I look forward to recommending your services to others seeking career support.",
+  },
+  {
+    name: "Aniket Verma",
+    text: "I took this service and they helped me a lot. What sets HireVoTech apart is their completely tailored strategy from normal agencies — they used custom cold email connection notes directly targeted to Bloomberg decision-makers to boost my application visibility and ensure it was selected. That unique approach helped me get placed significantly faster.",
+  },
+  {
+    name: "Divya Sharma",
+    text: "Not only did they connect me with incredible cloud infrastructure teams, but the salary negotiation coaching alone was worth every bit. They guided me through competing counter-offers and negotiated an extra $25,000 in base pay before signing.",
+  },
+  {
+    name: "Rohan Mehta",
+    text: "The resume transformation and reverse-headhunting strategy put my profile directly in front of Engineering VPs. I skipped automated applicant tracking screeners and had 4 hiring manager rounds scheduled within 10 days. The structured mentorship and guidance gave me total peace of mind.",
   },
 ];
 

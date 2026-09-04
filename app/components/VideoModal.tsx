@@ -58,7 +58,7 @@ export default function VideoModal({ isOpen, onClose }: VideoModalProps) {
                 <CheckCircle2 size={14} className="text-emerald-400" /> 80%+ Placement Rate
               </span>
               <span className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1">
-                <ShieldCheck size={14} className="text-[#c68efd]" /> No Upfront Fees
+                <ShieldCheck size={14} className="text-[#c68efd]" /> Dedicated Mentorship
               </span>
             </div>
           </div>

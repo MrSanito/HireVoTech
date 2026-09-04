@@ -201,8 +201,8 @@ export default function Hero() {
                   <ShieldCheck size={16} />
                 </div>
                 <div>
-                  <div className="text-[11px] sm:text-xs font-extrabold text-[#0D0C41]">Zero Upfront Fees</div>
-                  <div className="text-[9px] sm:text-[10px] text-emerald-600 font-semibold">Pay after 1st salary</div>
+                  <div className="text-[11px] sm:text-xs font-extrabold text-[#0D0C41]">Guaranteed Placements</div>
+                  <div className="text-[9px] sm:text-[10px] text-emerald-600 font-semibold">1-on-1 Dedicated Support</div>
                 </div>
               </div>
 
