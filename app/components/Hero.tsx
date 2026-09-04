@@ -17,11 +17,11 @@ import {
 } from "lucide-react";
 
 const heroFeedback = {
-  name: "Verified Candidate",
+  name: "Aniket Verma",
   role: "Finance & Tech Professional",
   company: "Bloomberg LP",
   offer: "+$175k",
-  avatar: "VC",
+  avatar: "AV",
   color: "from-[#4846D4] to-[#8482FF]",
   stars: 5,
   strategyTag: "Cold Email Note to Bloomberg",
