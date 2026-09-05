@@ -22,7 +22,7 @@ const heroFeedback = {
   company: "Bloomberg LP",
   offer: "+$175k",
   avatar: "AV",
-  color: "from-[#4846D4] to-[#8482FF]",
+  color: "from-[#4846D4] to-[#8482FF]", 
   stars: 5,
   strategyTag: "Cold Email Note to Bloomberg",
   text: "I took this service and they helped me a lot. What sets them apart is their completely different strategy from normal agencies — using custom cold email connection notes directly targeted to Bloomberg to boost my application visibility and ensure it was selected. That unique approach helped me get placed significantly faster!",
