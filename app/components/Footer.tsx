@@ -156,7 +156,13 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="#" className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/hirevotechllc/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs"
+              aria-label="LinkedIn"
+            >
               <LinkedinIcon size={14} />
             </a>
             <a href="#" className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs" aria-label="Twitter">

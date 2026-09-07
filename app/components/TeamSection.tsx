@@ -12,7 +12,7 @@ const teamMembers = [
     dept: "Software & Cloud Engineering",
     image: "/images/team-1.jpg",
     bio: "Specializing in full-stack, DevOps, and cloud systems placements across Silicon Valley and European tech hubs.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/company/hirevotechllc/",
     twitter: "#",
     email: "emily@hirevotech.com"
   },
@@ -22,7 +22,7 @@ const teamMembers = [
     dept: "Leadership & VP Recruitment",
     image: "/images/team-2.jpg",
     bio: "Ex-Google talent architect with 10+ years placing CTOs, Principal Architects, and Engineering Directors.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/company/hirevotechllc/",
     twitter: "#",
     email: "jason@hirevotech.com"
   },
@@ -32,7 +32,7 @@ const teamMembers = [
     dept: "Candidate Coaching & AI Talent",
     image: "/images/team-3.jpg",
     bio: "Certified interview coach who has guided 400+ candidates through FAANG and high-growth startup hiring loops.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/company/hirevotechllc/",
     twitter: "#",
     email: "amira@hirevotech.com"
   }
@@ -103,6 +103,8 @@ export default function TeamSection() {
                 <div className="flex items-center gap-2">
                   <a
                     href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
                     aria-label="LinkedIn"
                   >

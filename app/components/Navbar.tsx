@@ -453,7 +453,13 @@ export default function Navbar({ scrolled: initialScrolled = false, activeSectio
 
               {/* Social Icons */}
               <div className="flex items-center gap-3 pt-2">
-                <a href="#" className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors">
+                <a
+                  href="https://www.linkedin.com/company/hirevotechllc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                >
                   <LinkedinIcon size={14} />
                 </a>
                 <a href="#" className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors">
