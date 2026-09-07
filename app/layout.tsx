@@ -23,6 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "HireVoTech | Recruitment & Career Partners",
   description: "Whether you're searching for your next opportunity or aiming to advance your career, HireVoTech provides personalized recruitment and career support to help you achieve your professional goals.",
+  verification: {
+    google: "google7e30e21abcbf888f",
+  },
 };
 
 export default function RootLayout({
