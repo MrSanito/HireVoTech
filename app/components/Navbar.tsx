@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Menu, 
   X, 
@@ -75,13 +76,15 @@ export default function Navbar({ scrolled: initialScrolled = false, activeSectio
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-2xl bg-[#4846D4] flex items-center justify-center shadow-md shadow-[#4846D4]/30 group-hover:scale-105 transition-transform">
-              <Sparkles size={20} className="text-white" />
-            </div>
-            <span className="text-2xl font-extrabold tracking-tight text-[#0D0C41] font-sans">
-              Hire<span className="text-[#4846D4]">Vo</span>Tech
-            </span>
+          <Link href="/" className="flex items-center group py-0.5">
+            <Image
+              src="/logo.png"
+              alt="HireVoTech Logo"
+              width={160}
+              height={50}
+              className="h-10 md:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              priority
+            />
           </Link>
 
           {/* Desktop Capsule Navigation */}
@@ -337,14 +340,15 @@ export default function Navbar({ scrolled: initialScrolled = false, activeSectio
             <div className="space-y-8">
               {/* Drawer Header */}
               <div className="flex items-center justify-between pb-6 border-b border-[#E1E2EE]">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-xl bg-[#4846D4] flex items-center justify-center text-white">
-                    <Sparkles size={16} />
-                  </div>
-                  <span className="text-xl font-bold tracking-tight text-[#0D0C41]">
-                    Hire<span className="text-[#4846D4]">Vo</span>Tech
-                  </span>
-                </div>
+                <Link href="/" onClick={() => setOffcanvasOpen(false)} className="flex items-center">
+                  <Image
+                    src="/logo.png"
+                    alt="HireVoTech Logo"
+                    width={130}
+                    height={42}
+                    className="h-9 w-auto object-contain"
+                  />
+                </Link>
 
                 <button
                   onClick={() => setOffcanvasOpen(false)}

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { 
   Sparkles, 
   Send, 
@@ -79,13 +80,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4 text-left">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-2xl bg-[#4846D4] flex items-center justify-center shadow-[0_0_20px_rgba(72,70,212,0.3)]">
-                <Sparkles size={18} className="text-white" />
-              </div>
-              <span className="text-2xl font-extrabold tracking-tight text-[#0D0C41] font-sans">
-                Hire<span className="text-[#4846D4]">Vo</span>Tech
-              </span>
+            <Link href="/" className="inline-block group py-1">
+              <Image
+                src="/logo.png"
+                alt="HireVoTech Logo"
+                width={170}
+                height={55}
+                className="h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
             </Link>
 
             <p className="text-xs text-[#555566] leading-relaxed font-normal max-w-sm">
