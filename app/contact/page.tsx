@@ -82,8 +82,17 @@ export default function ContactPage() {
                     <Phone size={18} />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">Phone / WhatsApp</h4>
-                    <p className="text-xs text-[#555566] mt-1">+1 (800) 480-TECH &nbsp;|&nbsp; +91 95748 44683</p>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#0D0C41]">Call & WhatsApp (Available on Both)</h4>
+                    <p className="text-xs text-[#555566] mt-0.5 mb-1.5">Direct advisory and candidate support line</p>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <a href="tel:+918968447825" className="text-xs text-[#0D0C41] font-bold hover:text-[#4846D4] transition-colors">
+                        +91 89684 47825
+                      </a>
+                      <span className="text-[#555566]/40">|</span>
+                      <a href="tel:+919574844683" className="text-xs text-[#0D0C41] font-bold hover:text-[#4846D4] transition-colors">
+                        +91 95748 44683
+                      </a>
+                    </div>
                   </div>
                 </div>
 

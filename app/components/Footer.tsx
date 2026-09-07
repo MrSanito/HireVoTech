@@ -11,7 +11,7 @@ import {
   Phone, 
   MapPin
 } from "lucide-react";
-import { LinkedinIcon, TwitterIcon, InstagramIcon, GithubIcon } from "./SocialIcons";
+import { LinkedinIcon } from "./SocialIcons";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -99,12 +99,19 @@ export default function Footer() {
                 <Mail size={14} className="text-[#4846D4]" />
                 <a href="mailto:info@hirevotech.com" className="hover:text-[#4846D4] transition-colors">info@hirevotech.com</a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone size={14} className="text-emerald-600" />
-                <span>+1 (800) 480-TECH</span>
+              <div className="flex items-start gap-2.5">
+                <Phone size={14} className="text-emerald-600 mt-0.5 flex-shrink-0" />
+                <div className="space-y-0.5">
+                  <div className="text-[11px] text-[#555566] font-medium">Available on Call & WhatsApp</div>
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <a href="tel:+918968447825" className="hover:text-[#4846D4] transition-colors font-semibold">+91 89684 47825</a>
+                    <span className="text-[#555566]/40">|</span>
+                    <a href="tel:+919574844683" className="hover:text-[#4846D4] transition-colors font-semibold">+91 95748 44683</a>
+                  </div>
+                </div>
               </div>
               <div className="flex items-center gap-2.5">
-                <MapPin size={14} className="text-rose-500" />
+                <MapPin size={14} className="text-rose-500 flex-shrink-0" />
                 <span>17350 STATE HWY, 249 STE 220 Houston TX, USA-77064</span>
               </div>
             </div>
@@ -164,15 +171,6 @@ export default function Footer() {
               aria-label="LinkedIn"
             >
               <LinkedinIcon size={14} />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs" aria-label="Twitter">
-              <TwitterIcon size={14} />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs" aria-label="Instagram">
-              <InstagramIcon size={14} />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs" aria-label="GitHub">
-              <GithubIcon size={14} />
             </a>
           </div>
         </div>

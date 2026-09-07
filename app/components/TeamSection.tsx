@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Users, Mail, ArrowUpRight } from "lucide-react";
-import { LinkedinIcon, TwitterIcon } from "./SocialIcons";
+import { LinkedinIcon } from "./SocialIcons";
 
 const teamMembers = [
   {
@@ -13,7 +13,6 @@ const teamMembers = [
     image: "/images/team-1.jpg",
     bio: "Specializing in full-stack, DevOps, and cloud systems placements across Silicon Valley and European tech hubs.",
     linkedin: "https://www.linkedin.com/company/hirevotechllc/",
-    twitter: "#",
     email: "emily@hirevotech.com"
   },
   {
@@ -23,7 +22,6 @@ const teamMembers = [
     image: "/images/team-2.jpg",
     bio: "Ex-Google talent architect with 10+ years placing CTOs, Principal Architects, and Engineering Directors.",
     linkedin: "https://www.linkedin.com/company/hirevotechllc/",
-    twitter: "#",
     email: "jason@hirevotech.com"
   },
   {
@@ -33,7 +31,6 @@ const teamMembers = [
     image: "/images/team-3.jpg",
     bio: "Certified interview coach who has guided 400+ candidates through FAANG and high-growth startup hiring loops.",
     linkedin: "https://www.linkedin.com/company/hirevotechllc/",
-    twitter: "#",
     email: "amira@hirevotech.com"
   }
 ];
@@ -109,13 +106,6 @@ export default function TeamSection() {
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon size={14} />
-                  </a>
-                  <a
-                    href={member.twitter}
-                    className="w-8 h-8 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
-                    aria-label="Twitter"
-                  >
-                    <TwitterIcon size={14} />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
