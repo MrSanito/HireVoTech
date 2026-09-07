@@ -1,13 +1,32 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { FileText } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions | Service Agreements & Payment Terms",
+  description:
+    "Terms and conditions for HireVoTech's recruitment and career consulting services, covering service scopes, upfront fees, deferred success fees, and EMI structures.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function TermsAndConditionsPage() {
   return (
     <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.hirevotech.com" },
+          { name: "Terms & Conditions", url: "https://www.hirevotech.com/terms-and-conditions" },
+        ]}
+      />
       <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
 
       <Navbar scrolled={true} activeSection="" />

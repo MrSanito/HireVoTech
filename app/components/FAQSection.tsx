@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { HelpCircle, ChevronDown, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { FAQJsonLd } from "./JsonLd";
 
 interface FAQItem {
   q: string;
@@ -51,9 +52,13 @@ export default function FAQSection() {
     ? faqs 
     : faqs.filter(f => f.category === filter);
 
+  const jsonLdItems = faqs.map((f) => ({ question: f.q, answer: f.a }));
+
   return (
     <section id="faq" className="py-24 relative overflow-hidden bg-[#F2F3FC] border-y border-[#E1E2EE]">
+      <FAQJsonLd items={jsonLdItems} />
       <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10">
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center gap-2 bg-[#F0F0FF] border border-[#4846D4]/20 text-[#4846D4] rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider mx-auto">

@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MissionQuote from "../components/MissionQuote";
@@ -8,11 +7,34 @@ import Stats from "../components/Stats";
 import FeedbackSection from "../components/FeedbackSection";
 import CTABanner from "../components/CTABanner";
 import TrustedClients from "../components/TrustedClients";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Users, Sparkles, Target, Award } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us | Technical Recruitment & Career Advisory",
+  description:
+    "Learn how HireVoTech empowers elite software engineering talent and scales high-growth technology companies through precision alignment, career marketing, and deferred success fees.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About HireVoTech | Technical Recruitment & Career Advisory",
+    description:
+      "Bridging the gap between top 1% tech talent and world-class employers through transparent, success-driven recruitment partnerships.",
+    url: "https://www.hirevotech.com/about",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About HireVoTech" }],
+  },
+};
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.hirevotech.com" },
+          { name: "About Us", url: "https://www.hirevotech.com/about" },
+        ]}
+      />
       <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
       <div className="absolute top-[30%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 

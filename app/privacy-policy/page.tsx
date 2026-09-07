@@ -1,13 +1,32 @@
-"use client";
-
 import React from "react";
+import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { BreadcrumbJsonLd } from "../components/JsonLd";
 import { Shield } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Candidate Data & Confidentiality Standards",
+  description:
+    "HireVoTech's Privacy Policy explains our commitment to candidate data confidentiality, secure storage, and strict non-disclosure practices in technical recruitment.",
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://www.hirevotech.com" },
+          { name: "Privacy Policy", url: "https://www.hirevotech.com/privacy-policy" },
+        ]}
+      />
       <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-[#4846D4]/5 blur-[150px] pointer-events-none orb-float-1"></div>
 
       <Navbar scrolled={true} activeSection="" />
