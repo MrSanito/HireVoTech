@@ -4,8 +4,9 @@ export function OrganizationJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': ['Organization', 'EmploymentAgency', 'ProfessionalService'],
-    name: 'HireVoTech LLC',
-    alternateName: 'HireVoTech',
+    name: 'HireVoTech',
+    legalName: 'HireVoTech LLC',
+    alternateName: ['HireVoTech', 'HireVoTech LLC'],
     url: 'https://www.hirevotech.com',
     logo: 'https://www.hirevotech.com/logo.png',
     image: 'https://www.hirevotech.com/og-image.png',
@@ -13,7 +14,12 @@ export function OrganizationJsonLd() {
       'Premier technical career consulting and talent acquisition firm connecting top 1% software engineering talent with high-growth technology enterprises through proactive career marketing, dedicated interview coaching, and zero upfront risk deferred success fees.',
     email: 'info@hirevotech.com',
     telephone: '+91-89684-47825',
-    sameAs: ['https://www.linkedin.com/company/hirevotechllc/'],
+    sameAs: [
+      'https://www.linkedin.com/company/hirevotechllc/',
+      'https://x.com/hirevotech',
+      'https://github.com/hirevotech',
+      'https://www.instagram.com/hirevotech',
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: '17350 State Hwy 249, Ste 220',

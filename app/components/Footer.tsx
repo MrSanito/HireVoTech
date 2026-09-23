@@ -11,7 +11,7 @@ import {
   Phone, 
   MapPin
 } from "lucide-react";
-import { LinkedinIcon } from "./SocialIcons";
+import { LinkedinIcon, TwitterIcon, InstagramIcon, GithubIcon } from "./SocialIcons";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -168,9 +168,36 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs"
-              aria-label="LinkedIn"
+              aria-label="HireVoTech on LinkedIn"
             >
               <LinkedinIcon size={14} />
+            </a>
+            <a
+              href="https://x.com/hirevotech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs"
+              aria-label="HireVoTech on X (Twitter)"
+            >
+              <TwitterIcon size={14} />
+            </a>
+            <a
+              href="https://github.com/hirevotech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs"
+              aria-label="HireVoTech on GitHub"
+            >
+              <GithubIcon size={14} />
+            </a>
+            <a
+              href="https://www.instagram.com/hirevotech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 rounded-full bg-white border border-[#E1E2EE] hover:bg-[#4846D4] hover:border-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-all shadow-xs"
+              aria-label="HireVoTech on Instagram"
+            >
+              <InstagramIcon size={14} />
             </a>
           </div>
         </div>

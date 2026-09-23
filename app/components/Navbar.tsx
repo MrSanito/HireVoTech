@@ -19,7 +19,7 @@ import {
   HelpCircle,
   Award
 } from "lucide-react";
-import { LinkedinIcon } from "./SocialIcons";
+import { LinkedinIcon, TwitterIcon, InstagramIcon, GithubIcon } from "./SocialIcons";
 
 interface NavbarProps {
   scrolled?: boolean;
@@ -463,10 +463,37 @@ export default function Navbar({ scrolled: initialScrolled = false, activeSectio
                   href="https://www.linkedin.com/company/hirevotechllc/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn"
+                  aria-label="HireVoTech on LinkedIn"
                   className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
                 >
                   <LinkedinIcon size={14} />
+                </a>
+                <a
+                  href="https://x.com/hirevotech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="HireVoTech on X (Twitter)"
+                  className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                >
+                  <TwitterIcon size={14} />
+                </a>
+                <a
+                  href="https://github.com/hirevotech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="HireVoTech on GitHub"
+                  className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                >
+                  <GithubIcon size={14} />
+                </a>
+                <a
+                  href="https://www.instagram.com/hirevotech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="HireVoTech on Instagram"
+                  className="w-9 h-9 rounded-full bg-[#F2F3FC] hover:bg-[#4846D4] text-[#0D0C41] hover:text-white flex items-center justify-center transition-colors"
+                >
+                  <InstagramIcon size={14} />
                 </a>
               </div>
             </div>

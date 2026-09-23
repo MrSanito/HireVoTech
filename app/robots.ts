@@ -10,7 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
           '/private/',
           '/*.pdf$',
           '/scratch/',
@@ -29,7 +28,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
+          '/private/',
         ],
       },
       {
@@ -45,7 +44,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: [
           '/api/',
-          '/_next/',
+          '/private/',
         ],
       },
     ],

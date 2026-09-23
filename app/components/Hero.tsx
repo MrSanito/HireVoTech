@@ -49,14 +49,15 @@ export default function Hero() {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#0D0C41] leading-[1.08]">
               Find Your True <br />
+              Calling in Tech with{" "}
               <span className="text-[#4846D4]">
-                Calling in Tech.
+                HireVoTech.
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-base sm:text-lg md:text-xl text-[#555566] leading-relaxed max-w-xl font-normal">
-              Discover job opportunities, connect with innovative hiring managers, and advance your engineering career with guaranteed placement support.
+              HireVoTech bridges ambitious software engineers with top-tier hiring managers. Accelerate your tech career with 1-on-1 interview preparation and zero upfront risk deferred success fees.
             </p>
 
             {/* CTAs */}

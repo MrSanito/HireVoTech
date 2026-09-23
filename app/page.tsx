@@ -1,6 +1,5 @@
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import TrustedClients from "./components/TrustedClients";
@@ -15,93 +14,33 @@ import CTABanner from "./components/CTABanner";
 import ArticlesSection from "./components/ArticlesSection";
 import Footer from "./components/Footer";
 
-/* ─── Custom Hook: Scroll Reveal ─── */
-function useScrollReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("visible");
-          observer.unobserve(el);
-        }
+export const metadata: Metadata = {
+  title: "HireVoTech | Technical Recruitment & Career Advisory Firm",
+  description:
+    "HireVoTech connects ambitious software engineering talent with high-growth technology enterprises through proactive career marketing, 1-on-1 interview preparation, and deferred success fees.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "HireVoTech | Technical Recruitment & Career Advisory Firm",
+    description:
+      "Connecting top software engineering talent with high-growth technology enterprises through proactive career marketing, 1-on-1 interview preparation, and deferred success fees.",
+    url: "https://www.hirevotech.com",
+    siteName: "HireVoTech",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "HireVoTech - Technical Recruitment & Career Advisory",
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-}
-
-/* ─── Custom Hook: Animated Counter ─── */
-function useAnimatedCounter(target: number, duration: number = 2000, suffix: string = "") {
-  const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasStarted) {
-          setHasStarted(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [hasStarted]);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      setCount(Math.floor(eased * target));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [hasStarted, target, duration]);
-
-  return { ref, displayValue: `${count}${suffix}` };
-}
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+};
 
 export default function Home() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Scroll reveal refs
-  const logosRef = useScrollReveal();
-  const statsRef = useScrollReveal();
-
-  // Animated stat counters
-  const stat1 = useAnimatedCounter(80, 2000, "%");
-  const stat2 = useAnimatedCounter(5, 1500, "+");
-  const stat3 = useAnimatedCounter(860, 2500, "+");
-  const stat4 = useAnimatedCounter(60, 2000, "+");
-
-  const animatedStats = [
-    { ...stat1, label: "Placement Success Rate" },
-    { ...stat2, label: "Years of Industry Expertise" },
-    { ...stat3, label: "Successful Placements" },
-    { ...stat4, label: "Partnered Tech Companies" },
-  ];
-
   return (
     <div className="min-h-screen bg-[#FCFCFC] text-[#0D0C41] selection:bg-[#4846D4] selection:text-white relative overflow-hidden font-sans dot-grid">
       {/* Subtle background ambient glow */}
@@ -109,13 +48,13 @@ export default function Home() {
       <div className="absolute top-[35%] right-[-10%] w-[650px] h-[650px] rounded-full bg-[#F0F0FF] blur-[180px] pointer-events-none orb-float-2"></div>
 
       {/* ═══ 1. Navbar & Capsule Header ═══ */}
-      <Navbar scrolled={scrolled} activeSection="home" />
+      <Navbar activeSection="home" />
 
       {/* ═══ 2. Hero Section ═══ */}
       <Hero />
 
       {/* ═══ 3. Trusted Clients Logo Marquee ═══ */}
-      <TrustedClients logosRef={logosRef} />
+      <TrustedClients />
 
       {/* ═══ 4. Leadership / Mission Quote Card ═══ */}
       <MissionQuote />
@@ -123,7 +62,7 @@ export default function Home() {
       {/* ═══ 5. Dual Tilted Running Text Ticker Banner (-3deg & +3deg) ═══ */}
       <RunningMarquee />
 
-      {/* ═══ 7. Core Services Grid (4 Pillars) ═══ */}
+      {/* ═══ 6. Core Services Grid (4 Pillars) ═══ */}
       <ServicesSection />
 
       {/* ═══ 7. Job Listings & Career Categories Tabs ═══ */}
@@ -133,7 +72,7 @@ export default function Home() {
       <FeedbackSection />
 
       {/* ═══ 9. Placement Performance Stats ═══ */}
-      <Stats statsRef={statsRef} stats={animatedStats} />
+      <Stats />
 
       {/* ═══ 10. FAQ Accordion ═══ */}
       <FAQSection />

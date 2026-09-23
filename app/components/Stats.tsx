@@ -1,7 +1,44 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TrendingUp, Award, Users, Building } from "lucide-react";
+
+function useStatCounter(target: number, duration: number = 2000, suffix: string = "") {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [hasStarted, target, duration]);
+
+  return { ref, displayValue: `${count}${suffix}` };
+}
 
 export interface AnimatedStatItem {
   ref?: React.RefObject<HTMLSpanElement | null>;
@@ -15,11 +52,16 @@ interface StatsProps {
 }
 
 export default function Stats({ statsRef, stats }: StatsProps) {
-  const defaultStats = stats || [
-    { displayValue: "80%", label: "Placement Success Rate" },
-    { displayValue: "5+", label: "Years of Industry Expertise" },
-    { displayValue: "4.5K+", label: "Candidates Placed" },
-    { displayValue: "60+", label: "Partnered Tech Companies" },
+  const stat1 = useStatCounter(80, 2000, "%");
+  const stat2 = useStatCounter(5, 1500, "+");
+  const stat3 = useStatCounter(860, 2500, "+");
+  const stat4 = useStatCounter(60, 2000, "+");
+
+  const defaultStats: AnimatedStatItem[] = stats || [
+    { ...stat1, label: "Placement Success Rate" },
+    { ...stat2, label: "Years of Industry Expertise" },
+    { ...stat3, label: "Successful Placements" },
+    { ...stat4, label: "Partnered Tech Companies" },
   ];
 
   const icons = [TrendingUp, Award, Users, Building];
