@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { OrganizationJsonLd, WebSiteJsonLd } from "./components/JsonLd";
@@ -24,6 +24,13 @@ const jetbrainsMono = JetBrains_Mono({
 const siteTitle = "HireVoTech | Technical Recruitment & Career Advisory";
 const siteDescription =
   "HireVoTech is a premier technical career consulting and talent acquisition firm. We connect top software engineering talent with high-growth technology enterprises through proactive career marketing, 1-on-1 interview preparation, and zero upfront risk deferred success fees.";
+
+export const viewport: Viewport = {
+  themeColor: "#4846D4",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hirevotech.com"),
