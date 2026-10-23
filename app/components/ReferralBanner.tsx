@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface ReferralBannerProps {
   referRef?: React.RefObject<HTMLDivElement | null>;
@@ -22,12 +23,12 @@ export default function ReferralBanner({ referRef }: ReferralBannerProps) {
           Refer candidates or employers to our staffing agency and earn generous rewards. Use the link below to get started for free.
         </p>
 
-        <a
-          href="./refer-and-earn"
+        <Link
+          href="/refer-and-earn"
           className="btn bg-[#a020f0] hover:bg-[#8019c0] text-white border-none rounded-full px-8 gap-2 font-semibold transition-all hover:scale-105 btn-shimmer"
         >
           🎁 Refer & Earn — Use for Free
-        </a>
+        </Link>
       </div>
     </section>
   );
